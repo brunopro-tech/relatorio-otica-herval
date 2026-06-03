@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ótica Herval Select — Relatório de Performance</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ouro:#E8D44D; --ouro-esc:#A89820; --azul:#4A9AB4;
+  --carvao:#0D0C04; --petroleo:#0D2A36; --offwhite:#F5F2E8;
+  --vermelho:#E05555; --verde:#4CAF7D; --laranja:#E8943A;
+  --cinza:#888; --cinza-claro:#CCCCCC;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--carvao);color:var(--offwhite);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
+
+/* ── CURSOR CUSTOM ── */
+.cursor{position:fixed;pointer-events:none;z-index:9999;mix-blend-mode:difference;}
+.cursor-dot{width:8px;height:8px;background:var(--ouro);border-radius:50%;position:fixed;transform:translate(-50%,-50%);transition:transform .1s;}
+.cursor-ring{width:36px;height:36px;border:1.5px solid var(--ouro);border-radius:50%;position:fixed;transform:translate(-50%,-50%);transition:all .18s ease;opacity:.6;}
+body:hover .cursor-ring{opacity:1;}
+
+/* ── PROGRESS ── */
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--ouro),var(--azul),var(--verde));z-index:200;transition:width .2s;box-shadow:0 0 12px rgba(232,212,77,.6);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(13,12,4,.9);border-bottom:1px solid rgba(168,152,32,.25);backdrop-filter:blur(16px);}
+.nav-brand{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;color:var(--ouro-esc);letter-spacing:2px;}
+.nav-dots{display:flex;gap:10px;}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:rgba(232,212,77,.2);cursor:pointer;transition:all .3s;border:1px solid transparent;}
+.nav-dot.active{background:var(--ouro);box-shadow:0 0 10px rgba(232,212,77,.7);transform:scale(1.2);}
+.nav-dot:hover{background:rgba(232,212,77,.5);}
+
+/* ── CANVAS PARTÍCULAS ── */
+#bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.5;}
+
+/* ── SLIDES ── */
+.slide{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:110px 72px 72px;position:relative;overflow:hidden;}
+.slide-inner{position:relative;z-index:2;}
+.slide::after{content:'';position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--ouro);z-index:3;}
+.slide.azul-accent::after{background:var(--azul);}
+.slide.bg-petroleo{background:var(--petroleo);}
+
+/* ── TIPOGRAFIA ── */
+.tag{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--ouro-esc);}
+h1{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(80px,12vw,140px);line-height:.9;color:var(--ouro);letter-spacing:1px;}
+h1 em{color:var(--offwhite);font-style:normal;}
+h2{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(38px,5vw,58px);line-height:1.05;color:var(--ouro);}
+.bg-petroleo h2{color:var(--azul);}
+.slide-sub{font-size:20px;color:var(--cinza-claro);font-style:italic;margin-top:8px;line-height:1.4;}
+.divider{height:3px;width:80px;background:var(--ouro-esc);margin:20px 0;}
+.bg-petroleo .divider{background:var(--azul);}
+
+/* ── CAPA ── */
+.capa-sub{font-size:20px;color:var(--cinza-claro);font-style:italic;margin-top:14px;}
+.capa-meta{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:28px 64px;max-width:700px;}
+.meta-item label{display:block;font-family:'Rajdhani',sans-serif;font-size:11px;letter-spacing:3px;color:var(--ouro-esc);text-transform:uppercase;margin-bottom:6px;}
+.meta-item p{font-size:18px;color:var(--offwhite);}
+
+/* ── SCAN LINE ── */
+.scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(232,212,77,.35),transparent);animation:scan 5s linear infinite;pointer-events:none;z-index:1;}
+@keyframes scan{from{top:0}to{top:100%}}
+
+/* ── KPI GRID ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 0 32px;}
+.kpi-card{background:#141408;border:1px solid rgba(232,212,77,.15);padding:32px 24px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.23,1,.32,1);}
+.kpi-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--ka,var(--ouro));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.kpi-card:hover{transform:translateY(-6px);border-color:var(--ka,var(--ouro));box-shadow:0 20px 40px rgba(0,0,0,.4);}
+.kpi-card:hover::before{transform:scaleX(1);}
+.kpi-card::after{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(232,212,77,.06) 0%,transparent 70%);transition:all .4s;}
+.kpi-card:hover::after{transform:scale(1.5);}
+.kpi-num{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:64px;line-height:1;color:var(--ka,var(--ouro));display:block;}
+.kpi-label{font-size:15px;color:var(--offwhite);margin-top:8px;display:block;}
+.kpi-sub{font-size:12px;color:var(--ka,var(--ouro));margin-top:4px;display:block;opacity:.8;}
+
+/* ── DIAGNÓSTICO ── */
+.diag-box{background:#141408;border:1px solid rgba(168,152,32,.35);padding:28px 32px;border-left:4px solid var(--ouro-esc);margin-top:8px;}
+.diag-box strong{font-family:'Rajdhani',sans-serif;font-size:16px;letter-spacing:1px;color:var(--ouro);}
+.diag-box p{font-size:18px;color:var(--offwhite);margin-top:8px;line-height:1.7;}
+
+/* ── ANTES/DEPOIS ── */
+.compare-grid{display:grid;grid-template-columns:1fr 80px 1fr;gap:0;align-items:center;margin-top:36px;}
+.compare-col{padding:36px 32px;position:relative;}
+.compare-col.antes{border:1px solid var(--vermelho);}
+.compare-col.depois{border:1px solid var(--verde);}
+.compare-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;margin-bottom:6px;}
+.compare-period{font-size:14px;color:var(--cinza-claro);font-style:italic;margin-bottom:20px;}
+.compare-col li{font-size:16px;color:var(--offwhite);padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);list-style:none;}
+.compare-col li::before{content:'• ';color:var(--cinza);}
+.arrow-mid{text-align:center;}
+.arrow-icon{font-size:36px;color:var(--ouro);display:block;animation:pulse-arrow 1.8s ease-in-out infinite;}
+.arrow-label{font-family:'Rajdhani',sans-serif;font-size:12px;color:var(--ouro);letter-spacing:2px;margin-top:6px;}
+@keyframes pulse-arrow{0%,100%{transform:scale(1) translateX(0);opacity:1}50%{transform:scale(1.25) translateX(6px);opacity:.6}}
+
+/* ── LEAD CARDS ── */
+.leads-list{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
+.lead-card{background:#141408;border:1px solid rgba(255,255,255,.07);border-left:5px solid var(--lc,var(--vermelho));display:grid;grid-template-columns:1fr auto;gap:16px;padding:20px 22px;transition:all .35s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
+.lead-card::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--lc-rgb,224,85,85),.04) 0%,transparent 50%);opacity:0;transition:opacity .35s;}
+.lead-card:hover{transform:translateX(6px);border-color:var(--lc,var(--vermelho));box-shadow:4px 0 20px rgba(0,0,0,.3);}
+.lead-card:hover::before{opacity:1;}
+.lead-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;color:var(--lc,var(--vermelho));margin-bottom:4px;}
+.lead-sit{font-size:15px;color:var(--cinza-claro);margin-bottom:6px;line-height:1.4;}
+.lead-acao{font-size:15px;color:var(--offwhite);font-weight:500;line-height:1.4;}
+.lead-acao::before{content:'▶  ';color:var(--cinza);font-size:11px;}
+.badges{display:flex;flex-direction:column;gap:5px;align-items:flex-end;justify-content:center;}
+.badge{font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;white-space:nowrap;}
+.badge-r{background:rgba(232,212,77,.1);border:1px solid var(--ouro);color:var(--ouro);}
+.badge-n{background:rgba(74,154,180,.1);border:1px solid var(--azul);color:var(--azul);}
+.badge-ua{background:var(--vermelho);color:#fff;}
+.badge-um{background:rgba(232,148,58,.15);border:1px solid var(--laranja);color:var(--laranja);}
+.badge-ub{background:rgba(74,154,180,.15);border:1px solid var(--azul);color:var(--azul);}
+.badge-re{background:rgba(76,175,125,.1);border:1px solid var(--verde);color:var(--verde);}
+
+/* ── STEPS ── */
+.steps{display:flex;flex-direction:column;gap:20px;margin-top:36px;}
+.step-card{background:rgba(10,30,40,.7);border:1px solid rgba(255,255,255,.08);padding:32px 28px;display:grid;grid-template-columns:68px 1fr;gap:24px;align-items:start;transition:all .35s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
+.step-card::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--sc,var(--ouro));transition:width .5s ease;}
+.step-card:hover{transform:translateX(8px);border-color:var(--sc,var(--ouro));}
+.step-card:hover::after{width:100%;}
+.step-num{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:52px;line-height:1;color:var(--sc,var(--ouro));}
+.step-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:22px;margin-bottom:10px;}
+.step-desc{font-size:17px;color:var(--cinza-claro);line-height:1.65;margin-bottom:10px;}
+.step-meta{font-size:14px;font-style:italic;}
+
+/* ── ANIMAÇÕES REVEAL ── */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);}
+.rv.vis{opacity:1;transform:translateY(0);}
+.rl{opacity:0;transform:translateX(-40px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);}
+.rl.vis{opacity:1;transform:translateX(0);}
+.rr{opacity:0;transform:translateX(40px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);}
+.rr.vis{opacity:1;transform:translateX(0);}
+.rs{opacity:0;transform:scale(.85);transition:opacity .7s cubic-bezier(.23,1,.32,1),transform .7s cubic-bezier(.23,1,.32,1);}
+.rs.vis{opacity:1;transform:scale(1);}
+.d1{transition-delay:.08s!important}.d2{transition-delay:.16s!important}.d3{transition-delay:.24s!important}
+.d4{transition-delay:.32s!important}.d5{transition-delay:.40s!important}.d6{transition-delay:.48s!important}
+.d7{transition-delay:.56s!important}.d8{transition-delay:.64s!important}
+
+/* ── FOOTER ── */
+footer{background:#080804;border-top:1px solid rgba(168,152,32,.25);padding:24px 72px;display:flex;justify-content:space-between;align-items:center;}
+footer p{font-size:12px;color:var(--ouro-esc);letter-spacing:1px;}
+
+@media(max-width:900px){
+  .slide{padding:80px 28px 48px;}
+  h1{font-size:clamp(52px,14vw,90px);}
+  h2{font-size:clamp(28px,7vw,44px);}
+  .kpi-grid{grid-template-columns:1fr 1fr;}
+  .compare-grid{grid-template-columns:1fr;gap:16px;}
+  .arrow-mid{display:none;}
+  nav{padding:14px 20px;}
+  footer{padding:16px 28px;flex-direction:column;gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+<div class="cursor-dot" id="cdot"></div>
+<div class="cursor-ring" id="cring"></div>
+<div id="progress"></div>
+
+<nav>
+  <span class="nav-brand">@brunopro.tech  ·  Ótica Herval Select</span>
+  <div class="nav-dots" id="nav-dots"></div>
+</nav>
+
+<!-- ══════════ SLIDE 1 — CAPA ══════════ -->
+<section class="slide" id="slide-1" data-slide="1">
+  <div class="scan-line"></div>
+  <div class="slide-inner">
+    <div class="rv d1"><p class="tag">Relatório de Performance  ·  v1.0</p><div class="divider" style="width:140px;margin:12px 0;"></div></div>
+    <div class="rv d2"><h1>ÓTICA HERVAL<br><em>SELECT</em></h1></div>
+    <div class="rv d3"><p class="capa-sub">CRM Automatizado  ·  Assistente Clara</p></div>
+    <div class="capa-meta">
+      <div class="meta-item rv d4"><label>Período</label><p>11 de Maio — 02 de Junho de 2026</p></div>
+      <div class="meta-item rv d5"><label>Preparado por</label><p>Bruno  ·  @brunopro.tech</p></div>
+      <div class="meta-item rv d6" style="grid-column:1/-1"><label>Para</label><p>Léo e James  ·  Sócios, Ótica Herval Select  ·  Maringá/PR</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SLIDE 2 — PAINEL GERAL ══════════ -->
+<section class="slide" id="slide-2" data-slide="2">
+  <div class="slide-inner">
+    <div class="rv"><h2>Painel Geral — Primeiro Mês</h2><p class="slide-sub">Visão consolidada de 23 dias de operação</p><div class="divider"></div></div>
+    <div class="kpi-grid">
+      <div class="kpi-card rs d1" style="--ka:var(--ouro)"><span class="kpi-num" data-target="209">0</span><span class="kpi-label">Leads Captados</span><span class="kpi-sub">Total no período</span></div>
+      <div class="kpi-card rs d2" style="--ka:var(--vermelho)"><span class="kpi-num">10%</span><span class="kpi-label">Taxa de Resposta</span><span class="kpi-sub">21 responderam</span></div>
+      <div class="kpi-card rs d3" style="--ka:var(--azul)"><span class="kpi-num" data-target="9">0</span><span class="kpi-label">Em Negociação</span><span class="kpi-sub">Leads ativos</span></div>
+      <div class="kpi-card rs d4" style="--ka:var(--verde)"><span class="kpi-num" data-target="8">0</span><span class="kpi-label">Receitas Coletadas</span><span class="kpi-sub">Arquivado na ficha do Lead</span></div>
+    </div>
+    <div class="diag-box rv d5">
+      <strong>DIAGNÓSTICO PRINCIPAL:</strong>
+      <p>90% dos leads não responderam após o primeiro contato. Esse índice está concentrado no período <strong style="color:var(--ouro)">ANTES</strong> do ajuste do tráfego (11–19/mai). Após o reajuste, a qualidade melhorou significativamente — os novos leads chegaram mais qualificados, avançaram mais na jornada e enviaram receitas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SLIDE 3 — TRÁFEGO ══════════ -->
+<section class="slide bg-petroleo azul-accent" id="slide-3" data-slide="3">
+  <div class="slide-inner">
+    <div class="rv"><h2>Impacto do Ajuste do Tráfego Pago</h2><p class="slide-sub">Análise comparativa: antes vs. depois do reajuste (~19/mai)</p><div class="divider"></div></div>
+    <div class="compare-grid">
+      <div class="compare-col antes rl d1">
+        <p class="compare-title" style="color:var(--vermelho)">ANTES DO AJUSTE</p>
+        <p class="compare-period">11 – 19 de Maio  (~9 dias)</p>
+        <ul>
+          <li>~10–12 leads por dia</li><li>Taxa de resposta &lt; 5%</li>
+          <li>0 receitas enviadas</li><li>Leads fora do público-alvo</li>
+          <li>Casos de clique acidental</li><li>Urgência majoritariamente baixa</li>
+        </ul>
+      </div>
+      <div class="arrow-mid rv d3"><span class="arrow-icon">▶</span><p class="arrow-label">AJUSTE</p></div>
+      <div class="compare-col depois rr d2">
+        <p class="compare-title" style="color:var(--verde)">DEPOIS DO AJUSTE</p>
+        <p class="compare-period">20/mai – 02/jun  (~14 dias)</p>
+        <ul>
+          <li>~4–6 leads por dia (volume menor)</li><li>Taxa de resposta &gt; 30% nos novos</li>
+          <li>8 receitas coletadas pela Clara</li><li>Leads chegando em Negociação</li>
+          <li>Mais urgência Alta identificada</li><li>9 leads ativos em conversação</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SLIDE 4 — LEADS pt1 ══════════ -->
+<section class="slide" id="slide-4" data-slide="4">
+  <div class="slide-inner">
+    <div class="rv"><h2>Leads para Reativar esta Semana</h2><p class="slide-sub">Leads quentes parados + negociação em aberto — retomada pela vendedora</p><div class="divider"></div></div>
+    <div class="leads-list">
+      <div class="lead-card rv d1" style="--lc:var(--vermelho)">
+        <div><p class="lead-name">Elaine Ca</p><p class="lead-sit">Situação: Visita agendada — confirmou mas não apareceu</p><p class="lead-acao">Perguntar o que aconteceu e tentar reagendar</p></div>
+        <div class="badges"><span class="badge badge-r">REATIVAR</span><span class="badge badge-ua">URG: ALTA</span></div>
+      </div>
+      <div class="lead-card rv d2" style="--lc:var(--ouro)">
+        <div><p class="lead-name">Clara Montagneri</p><p class="lead-sit">Situação: Disse 'amei vocês' — aguarda exame da tia</p><p class="lead-acao">Perguntar se a tia já fez o exame e se ainda tem interesse</p></div>
+        <div class="badges"><span class="badge badge-r">REATIVAR</span><span class="badge badge-um">URG: MÉDIA</span></div>
+      </div>
+      <div class="lead-card rv d3" style="--lc:var(--vermelho)">
+        <div><p class="lead-name">Andressa Carvalho  ·  15 msgs</p><p class="lead-sit">Situação: Vendedora passou o valor — parou de responder</p><p class="lead-acao">Perguntar se viu em outro lugar e se o preço está dentro do esperado</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+      <div class="lead-card rv d4" style="--lc:var(--laranja)">
+        <div><p class="lead-name">D.Tay  ·  7 msgs</p><p class="lead-sit">Situação: Ficou de visitar a loja — não confirmou presença</p><p class="lead-acao">Perguntar quando pretende passar na loja</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+      <div class="lead-card rv d5" style="--lc:var(--vermelho)">
+        <div><p class="lead-name">José Lucas Freitas  ·  6 msgs</p><p class="lead-sit">Situação: Advogado, perguntou armações — parou após receber o valor</p><p class="lead-acao">Perguntar o que achou das armações, se tem modelo em mente e tentar agendar visita</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SLIDE 5 — LEADS pt2 ══════════ -->
+<section class="slide" id="slide-5" data-slide="5">
+  <div class="slide-inner">
+    <div class="rv"><h2>Leads para Reativar <span style="font-size:.55em;color:var(--cinza)">(cont.)</span></h2><p class="slide-sub">Continuação — leads em negociação</p><div class="divider"></div></div>
+    <div class="leads-list">
+      <div class="lead-card rv d1" style="--lc:var(--laranja)">
+        <div><p class="lead-name">freirerosimeiry  ·  1 msg</p><p class="lead-sit">Situação: Ficou de passar na loja</p><p class="lead-acao">Perguntar quando pretende passar na loja</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+      <div class="lead-card rv d2" style="--lc:var(--vermelho)">
+        <div><p class="lead-name">Edyson Gomes Lago  ·  2 msgs</p><p class="lead-sit">Situação: Parou de responder após receber o preço</p><p class="lead-acao">Perguntar o que achou, se está dentro do orçamento, se está vendo em outra loja</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+      <div class="lead-card rv d3" style="--lc:var(--verde)">
+        <div><p class="lead-name">silene  ·  2 msgs</p><p class="lead-sit">Situação: Demonstrou bastante interesse</p><p class="lead-acao">Perguntar quando consegue passar na loja — não insistir, apenas dizer que está à disposição</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span></div>
+      </div>
+      <div class="lead-card rv d4" style="--lc:var(--azul)">
+        <div><p class="lead-name">Guiomar Ferreira  ·  5 msgs</p><p class="lead-sit">Situação: Em andamento</p><p class="lead-acao">Perguntar se já realizou o exame de vista</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ub">URG: BAIXA</span></div>
+      </div>
+      <div class="lead-card rv d5" style="--lc:var(--azul)">
+        <div><p class="lead-name">Diego Matheus  ·  2 msgs</p><p class="lead-sit">Situação: Óculos apenas para descanso</p><p class="lead-acao">Perguntar a faixa de valor que está buscando</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ub">URG: BAIXA</span></div>
+      </div>
+      <div class="lead-card rv d6" style="--lc:var(--vermelho)">
+        <div><p class="lead-name">Regina Marques  ·  2 msgs</p><p class="lead-sit">Situação: Receita recente — parou após receber o preço</p><p class="lead-acao">Perguntar se viu em outro lugar, qual valor e forma de pagamento que encontrou</p></div>
+        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ub">URG: BAIXA</span><span class="badge badge-re">RECEITA ✓</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SLIDE 6 — PRÓXIMOS PASSOS ══════════ -->
+<section class="slide bg-petroleo azul-accent" id="slide-6" data-slide="6">
+  <div class="slide-inner">
+    <div class="rv"><h2>Próximos Passos</h2><p class="slide-sub">Ações prioritárias para a semana + visão do próximo ciclo</p><div class="divider"></div></div>
+    <div class="steps">
+      <div class="step-card rv d1" style="--sc:var(--vermelho);border-color:rgba(224,85,85,.25)">
+        <span class="step-num">01</span>
+        <div>
+          <p class="step-title" style="color:var(--vermelho)">Vendedora — Retomar os leads em negociação e reativação</p>
+          <p class="step-desc">Verificar se vieram na loja. Caso não tenham vindo, reativar conversa com perguntas para entender qual a situação do Lead.</p>
+          <p class="step-meta" style="color:var(--vermelho)">Vendedora  ·  Esta semana</p>
+        </div>
+      </div>
+      <div class="step-card rv d2" style="--sc:var(--azul);border-color:rgba(74,154,180,.25)">
+        <span class="step-num">02</span>
+        <div>
+          <p class="step-title" style="color:var(--azul)">Tráfego — Análise do ciclo pós-ajuste</p>
+          <p class="step-desc">Com 14 dias de campanha ajustada, acompanhar qualidade dos leads para decidir se mantém, escala ou ajusta novamente. A tendência é que o algoritmo comece a entregar mais leads e redução de custo por lead.</p>
+          <p class="step-meta" style="color:var(--azul)">Gestor de tráfego  ·  Próxima semana</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>@brunopro.tech  ·  Ótica Herval Select  ·  Relatório Maio–Jun 2026</p>
+  <p>Gestão de Automação com IA</p>
+</footer>
+
+<script>
+// ── CURSOR CUSTOM ──
+const cdot = document.getElementById('cdot');
+const cring = document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cdot.style.left=mx+'px'; cdot.style.top=my+'px';
+});
+function animCursor(){
+  rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
+  cring.style.left=rx+'px'; cring.style.top=ry+'px';
+  requestAnimationFrame(animCursor);
+}
+animCursor();
+document.querySelectorAll('a,button,.kpi-card,.lead-card,.step-card,.nav-dot').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cring.style.transform='translate(-50%,-50%) scale(1.8)';cring.style.opacity='.9';});
+  el.addEventListener('mouseleave',()=>{cring.style.transform='translate(-50%,-50%) scale(1)';cring.style.opacity='.6';});
+});
+
+// ── CANVAS PARTÍCULAS ──
+const canvas=document.getElementById('bg-canvas');
+const ctx=canvas.getContext('2d');
+let W,H,particles=[];
+function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+resize();
+window.addEventListener('resize',resize);
+class Particle{
+  constructor(){this.reset();}
+  reset(){
+    this.x=Math.random()*W; this.y=Math.random()*H;
+    this.vx=(Math.random()-.5)*.3; this.vy=(Math.random()-.5)*.3;
+    this.r=Math.random()*1.8+.5;
+    this.alpha=Math.random()*.25+.05;
+    this.color=Math.random()>.5?'232,212,77':'74,154,180';
+  }
+  update(){
+    this.x+=this.vx; this.y+=this.vy;
+    if(this.x<0||this.x>W||this.y<0||this.y>H) this.reset();
+  }
+  draw(){
+    ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(${this.color},${this.alpha})`; ctx.fill();
+  }
+}
+for(let i=0;i<90;i++) particles.push(new Particle());
+
+// Linhas de conexão
+function drawLines(){
+  for(let i=0;i<particles.length;i++){
+    for(let j=i+1;j<particles.length;j++){
+      const dx=particles[i].x-particles[j].x, dy=particles[i].y-particles[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<100){
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x,particles[i].y);
+        ctx.lineTo(particles[j].x,particles[j].y);
+        ctx.strokeStyle=`rgba(232,212,77,${.04*(1-dist/100)})`;
+        ctx.lineWidth=.5; ctx.stroke();
+      }
+    }
+  }
+}
+function animParticles(){
+  ctx.clearRect(0,0,W,H);
+  particles.forEach(p=>{p.update();p.draw();});
+  drawLines();
+  requestAnimationFrame(animParticles);
+}
+animParticles();
+
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll',()=>{
+  const el=document.getElementById('progress');
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  el.style.width=(window.scrollY/h*100)+'%';
+});
+
+// ── NAV DOTS ──
+const slides=document.querySelectorAll('.slide');
+const dotsC=document.getElementById('nav-dots');
+slides.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='nav-dot'+(i===0?' active':'');
+  d.addEventListener('click',()=>document.getElementById('slide-'+(i+1)).scrollIntoView({behavior:'smooth'}));
+  dotsC.appendChild(d);
+});
+
+// ── INTERSECTION OBSERVER ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.rv,.rl,.rr,.rs').forEach(el=>el.classList.add('vis'));
+      const idx=parseInt(e.target.dataset.slide)-1;
+      document.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));
+      // counter
+      e.target.querySelectorAll('[data-target]').forEach(el=>{
+        if(el.dataset.counted) return; el.dataset.counted=1;
+        const target=parseInt(el.dataset.target); let cur=0;
+        const step=Math.max(1,Math.ceil(target/50));
+        const t=setInterval(()=>{cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(t);},28);
+      });
+    }
+  });
+},{threshold:.12});
+slides.forEach(s=>obs.observe(s));
+
+// ── PARALLAX SUAVE ──
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  document.querySelectorAll('.scan-line').forEach(el=>{
+    el.style.opacity=.6+Math.sin(sy*.003)*.4;
+  });
+});
+
+// ── GLITCH na capa ao hover ──
+const h1=document.querySelector('h1');
+if(h1){
+  h1.addEventListener('mouseenter',()=>{
+    h1.style.animation='glitch-h1 .4s steps(2) 2';
+  });
+  h1.addEventListener('animationend',()=>{h1.style.animation='';});
+}
+const style=document.createElement('style');
+style.textContent=`
+@keyframes glitch-h1{
+  0%{text-shadow:3px 0 var(--azul),-3px 0 var(--vermelho);clip-path:inset(10% 0 85% 0)}
+  25%{text-shadow:-4px 0 var(--azul),4px 0 var(--vermelho);clip-path:inset(50% 0 30% 0)}
+  50%{text-shadow:3px 0 var(--verde),-3px 0 var(--ouro);clip-path:inset(80% 0 5% 0)}
+  75%{text-shadow:-2px 0 var(--azul),2px 0 var(--vermelho);clip-path:inset(5% 0 70% 0)}
+  100%{text-shadow:none;clip-path:none}
+}`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
