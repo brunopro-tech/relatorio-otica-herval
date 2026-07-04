@@ -107,7 +107,7 @@ h2{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(38px,5vw,58
 .badge-re{background:rgba(76,175,125,.1);border:1px solid var(--verde);color:var(--verde);}
 /* STEPS */
 .steps{display:flex;flex-direction:column;gap:18px;margin-top:32px;}
-.step-card{background:rgba(10,30,40,.7);border:1px solid rgba(255,255,255,.08);padding:28px 26px;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start;transition:all .35s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
+.step-card{background:rgba(10,30,40,.7);border:1px solid rgba(255,255,255,.08);padding:28px 26px;display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start;overflow:hidden;transition:all .35s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
 .step-card::after{content:'';position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--sc,var(--ouro));transition:width .5s ease;}
 .step-card:hover{transform:translateX(8px);border-color:var(--sc,var(--ouro));}
 .step-card:hover::after{width:100%;}
@@ -145,7 +145,7 @@ footer p{font-size:13px;color:var(--ouro-esc);letter-spacing:1px;}
   footer{padding:16px 24px;flex-direction:column;gap:8px;}
   .destaque-box{grid-template-columns:1fr!important;}
   .meta-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;}
-  .step-card{grid-template-columns:44px 1fr;gap:14px;padding:20px 18px;}
+  .step-card{grid-template-columns:44px 1fr;gap:14px;padding:20px 18px;overflow:hidden;}
   .step-num{font-size:36px;}
   .step-title{font-size:18px;}
   .step-desc{font-size:15px;}
@@ -154,34 +154,34 @@ footer p{font-size:13px;color:var(--ouro-esc);letter-spacing:1px;}
 /* ── MOBILE (max 600px) ── */
 @media(max-width:600px){
   .slide{padding:72px 16px 40px;min-height:auto;}
-  h1{font-size:clamp(56px,18vw,90px);line-height:.92;}
-  h2{font-size:clamp(32px,9vw,48px);}
-  .slide-sub{font-size:30px;}
-  .tag{font-size:20px;letter-spacing:2px;}
+  h1{font-size:clamp(42px,13vw,70px);line-height:.92;}
+  h2{font-size:clamp(24px,7vw,38px);}
+  .slide-sub{font-size:19px;}
+  .tag{font-size:11px;letter-spacing:2px;}
   .divider{margin:12px 0;}
 
   /* NAV */
   nav{padding:10px 14px;flex-wrap:wrap;gap:6px;}
-  .nav-brand{font-size:18px;letter-spacing:1px;width:100%;}
+  .nav-brand{font-size:10px;letter-spacing:1px;width:100%;}
   .nav-dots{gap:7px;}
   .nav-dot{width:8px;height:8px;}
 
   /* CAPA */
   .capa-meta{grid-template-columns:1fr;gap:16px;margin-top:28px;}
-  .meta-item p{font-size:30px;}
-  .capa-sub{font-size:30px;}
+  .meta-item p{font-size:17px;}
+  .capa-sub{font-size:17px;}
 
   /* KPI */
   .kpi-grid{grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 16px;}
   .kpi-card{padding:18px 14px;}
-  .kpi-num{font-size:92px;}
-  .kpi-label{font-size:24px;}
-  .kpi-sub{font-size:20px;}
+  .kpi-num{font-size:52px;}
+  .kpi-label{font-size:14px;}
+  .kpi-sub{font-size:12px;}
 
   /* DIAGNÓSTICO */
   .diag-box{padding:16px 16px;}
-  .diag-box p{font-size:28px;line-height:1.6;}
-  .diag-box strong{font-size:24px;}
+  .diag-box p{font-size:16px;line-height:1.6;}
+  .diag-box strong{font-size:14px;}
 
   /* PAINEL 2 COLUNAS → 1 */
   div[style*="grid-template-columns:1fr 1fr"]{
@@ -191,24 +191,24 @@ footer p{font-size:13px;color:var(--ouro-esc);letter-spacing:1px;}
   /* CANAL */
   .canal-grid{grid-template-columns:1fr;gap:12px;}.canal-4-grid{grid-template-columns:1fr;gap:12px;}
   .canal-card{padding:20px 16px;}
-  .canal-num{font-size:84px;}
-  .canal-title{font-size:30px;}
-  .canal-label{font-size:26px;}
-  .canal-stat{font-size:24px;}
+  .canal-num{font-size:48px;}
+  .canal-title{font-size:17px;}
+  .canal-label{font-size:15px;}
+  .canal-stat{font-size:13px;}
 
   /* COMPARATIVO */
   .compare-grid{grid-template-columns:1fr;gap:10px;}
   .compare-col{padding:20px 16px;}
-  .compare-title{font-size:32px;}
-  .compare-period{font-size:24px;margin-bottom:12px;}
-  .compare-row-label{font-size:26px;}
-  .compare-row-val{font-size:36px;}
+  .compare-title{font-size:18px;}
+  .compare-period{font-size:13px;margin-bottom:12px;}
+  .compare-row-label{font-size:15px;}
+  .compare-row-val{font-size:20px;}
 
   /* TABELAS — scroll horizontal */
-  .meta-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:24px;}
-  .meta-table th{font-size:20px;padding:8px 10px;}
-  .meta-table td{font-size:24px;padding:8px 10px;}
-  .meta-table .num{font-size:28px;}
+  .meta-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:13px;}
+  .meta-table th{font-size:11px;padding:8px 10px;}
+  .meta-table td{font-size:13px;padding:8px 10px;}
+  .meta-table .num{font-size:16px;}
 
   /* DESTAQUE BOX */
   .destaque-box{
@@ -216,26 +216,26 @@ footer p{font-size:13px;color:var(--ouro-esc);letter-spacing:1px;}
     padding:0!important;gap:0!important;
   }
   .destaque-box > div{padding:16px 18px!important;}
-  .destaque-num{font-size:68px!important;}
-  .destaque-label{font-size:24px!important;}
+  .destaque-num{font-size:38px!important;}
+  .destaque-label{font-size:13px!important;}
 
   /* LEAD CARDS */
   .lead-card{grid-template-columns:1fr;gap:10px;padding:14px 14px;}
-  .lead-name{font-size:34px;}
-  .lead-sit{font-size:24px;}
-  .lead-acao{font-size:24px;}
+  .lead-name{font-size:19px;}
+  .lead-sit{font-size:13px;}
+  .lead-acao{font-size:13px;}
   .badges{flex-direction:row;flex-wrap:wrap;gap:4px;justify-content:flex-start;}
-  .badge{font-size:16px;padding:3px 7px;}
+  .badge{font-size:9px;padding:3px 7px;}
 
   /* STEPS */
-  .step-card{grid-template-columns:38px 1fr;gap:12px;padding:16px 14px;}
-  .step-num{font-size:60px;}
-  .step-title{font-size:32px;margin-bottom:6px;}
-  .step-desc{font-size:26px;line-height:1.55;}
+  .step-card{display:flex;flex-direction:column;gap:8px;padding:16px 14px;}.step-num{align-self:flex-start;line-height:1;margin-bottom:0;}
+  .step-num{font-size:34px;line-height:1;display:block;}
+  .step-title{font-size:18px;margin-bottom:6px;}
+  .step-desc{font-size:14px;line-height:1.55;}
 
   /* FOOTER */
   footer{padding:14px 16px;flex-direction:column;gap:6px;text-align:center;}
-  footer p{font-size:20px;}
+  footer p{font-size:11px;}
 }
 </style>
 </head>
