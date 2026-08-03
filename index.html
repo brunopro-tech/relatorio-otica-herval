@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ótica Herval Select — Relatório Junho 2026</title>
+<title>Ótica Herval Select — Relatório Julho 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root{--ouro:#E8D44D;--ouro-esc:#A89820;--azul:#4A9AB4;--carvao:#0D0C04;--petroleo:#0D2A36;--offwhite:#F5F2E8;--vermelho:#E05555;--verde:#4CAF7D;--laranja:#E8943A;--cinza:#888;--cinza-claro:#CCCCCC;}
@@ -159,58 +159,40 @@ footer p{font-size:16px;color:var(--ouro-esc);letter-spacing:1px;}
   .slide-sub{font-size:23px;}
   .tag{font-size:13px;letter-spacing:2px;}
   .divider{margin:12px 0;}
-
-  /* NAV */
   nav{padding:10px 14px;flex-wrap:wrap;gap:6px;}
   .nav-brand{font-size:12px;letter-spacing:1px;width:100%;}
   .nav-dots{gap:7px;}
   .nav-dot{width:8px;height:8px;}
-
-  /* CAPA */
   .capa-meta{grid-template-columns:1fr;gap:16px;margin-top:28px;}
   .meta-item p{font-size:20px;}
   .capa-sub{font-size:20px;}
-
-  /* KPI */
   .kpi-grid{grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 16px;}
   .kpi-card{padding:18px 14px;}
   .kpi-num{font-size:62px;}
   .kpi-label{font-size:17px;}
   .kpi-sub{font-size:14px;}
-
-  /* DIAGNÓSTICO */
   .diag-box{padding:16px 16px;}
   .diag-box p{font-size:19px;line-height:1.6;}
   .diag-box strong{font-size:17px;}
-
-  /* PAINEL 2 COLUNAS → 1 */
   div[style*="grid-template-columns:1fr 1fr"]{
     display:flex!important;flex-direction:column!important;gap:12px!important;
   }
-
-  /* CANAL */
   .canal-grid{grid-template-columns:1fr;gap:12px;}.canal-4-grid{grid-template-columns:1fr;gap:12px;}
   .canal-card{padding:20px 16px;}
   .canal-num{font-size:58px;}
   .canal-title{font-size:20px;}
   .canal-label{font-size:18px;}
   .canal-stat{font-size:16px;}
-
-  /* COMPARATIVO */
   .compare-grid{grid-template-columns:1fr;gap:10px;}
   .compare-col{padding:20px 16px;}
   .compare-title{font-size:22px;}
   .compare-period{font-size:16px;margin-bottom:12px;}
   .compare-row-label{font-size:18px;}
   .compare-row-val{font-size:24px;}
-
-  /* TABELAS — scroll horizontal */
   .meta-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap;font-size:16px;}
   .meta-table th{font-size:13px;padding:8px 10px;}
   .meta-table td{font-size:16px;padding:8px 10px;}
   .meta-table .num{font-size:19px;}
-
-  /* DESTAQUE BOX */
   .destaque-box{
     display:flex!important;flex-direction:column!important;
     padding:0!important;gap:0!important;
@@ -218,22 +200,16 @@ footer p{font-size:16px;color:var(--ouro-esc);letter-spacing:1px;}
   .destaque-box > div{padding:16px 18px!important;}
   .destaque-num{font-size:46px!important;}
   .destaque-label{font-size:16px!important;}
-
-  /* LEAD CARDS */
   .lead-card{grid-template-columns:1fr;gap:10px;padding:14px 14px;}
   .lead-name{font-size:23px;}
   .lead-sit{font-size:16px;}
   .lead-acao{font-size:16px;}
   .badges{flex-direction:row;flex-wrap:wrap;gap:4px;justify-content:flex-start;}
   .badge{font-size:11px;padding:3px 7px;}
-
-  /* STEPS */
   .step-card{display:flex;flex-direction:column;gap:8px;padding:16px 14px;}.step-num{align-self:flex-start;line-height:1;margin-bottom:0;}
   .step-num{font-size:41px;line-height:1;display:block;}
   .step-title{font-size:22px;margin-bottom:6px;}
   .step-desc{font-size:17px;line-height:1.55;}
-
-  /* FOOTER */
   footer{padding:14px 16px;flex-direction:column;gap:6px;text-align:center;}
   footer p{font-size:13px;}
 }
@@ -248,344 +224,202 @@ footer p{font-size:16px;color:var(--ouro-esc);letter-spacing:1px;}
   <span class="nav-brand">@brunopro.tech  ·  Ótica Herval Select</span>
   <div class="nav-dots" id="nav-dots"></div>
 </nav>
-
-<!-- SLIDE 1 — CAPA -->
 <section class="slide" id="slide-1" data-slide="1">
   <div class="scan-line"></div>
   <div class="slide-inner">
-    <div class="rv d1"><p class="tag">Relatório de Performance  ·  v2.0</p><div class="divider" style="width:140px;margin:12px 0;"></div></div>
-    <div class="rv d2"><h1>ÓTICA HERVAL<br><em>SELECT</em></h1></div>
-    <div class="rv d3"><p class="capa-sub">CRM Automatizado  ·  Assistente Clara  ·  Tráfego Pago</p></div>
+    <span class="tag">Relatório Mensal</span>
+    <h1>Julho<br><em>2026</em></h1>
+    <p class="capa-sub">Ótica Herval Select — Diagnóstico Comercial e Tráfego Pago</p>
     <div class="capa-meta">
-      <div class="meta-item rv d4"><label>Período</label><p>03 de Junho — 03 de Julho de 2026</p></div>
-      <div class="meta-item rv d5"><label>Preparado por</label><p>Bruno  ·  @brunopro.tech</p></div>
-      <div class="meta-item rv d6" style="grid-column:1/-1"><label>Para</label><p>Léo e James  ·  Sócios, Ótica Herval Select  ·  Maringá/PR</p></div>
+      <div class="meta-item"><label>Período</label><p>01 a 31 de Julho / 2026</p></div>
+      <div class="meta-item"><label>Preparado por</label><p>Bruno — Gestão de Automação com IA</p></div>
+      <div class="meta-item"><label>Leads no mês</label><p>113 cadastros</p></div>
+      <div class="meta-item"><label>Investimento em tráfego</label><p>R$ 1.083,29</p></div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 2 — PAINEL GERAL -->
 <section class="slide" id="slide-2" data-slide="2">
   <div class="slide-inner">
-    <div class="rv"><h2>Painel Geral — Segundo Mês</h2><p class="slide-sub">Visão consolidada de 30 dias de operação · 03/06 a 03/07/2026</p><div class="divider"></div></div>
+    <span class="tag rv">Painel Geral</span>
+    <h2 class="rv d1">O mês em números</h2>
+    <div class="divider rv d1"></div>
     <div class="kpi-grid">
-      <div class="kpi-card rs d1" style="--ka:var(--ouro)"><span class="kpi-num" data-target="120">0</span><span class="kpi-label">Leads Registrados</span><span class="kpi-sub">Total no período</span></div>
-      <div class="kpi-card rs d2" style="--ka:var(--verde)"><span class="kpi-num">35,8%</span><span class="kpi-label">Taxa de Resposta</span><span class="kpi-sub">vs 11,5% no mês anterior</span></div>
-      <div class="kpi-card rs d3" style="--ka:var(--azul)"><span class="kpi-num" data-target="6">0</span><span class="kpi-label">Avançaram no Funil</span><span class="kpi-sub">Negociação e Visita</span></div>
-      <div class="kpi-card rs d4" style="--ka:var(--laranja)"><span class="kpi-num" data-target="11">0</span><span class="kpi-label">Receitas Coletadas</span><span class="kpi-sub">Arquivadas pela Clara</span></div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
-      <div class="diag-box rv d4" style="border-left-color:var(--azul)">
-        <strong style="color:var(--azul)">📅 TRANSIÇÃO DE OBJETIVO DE CAMPANHA</strong>
-        <p style="margin-top:10px;font-size:16px;color:var(--offwhite);">
-          <strong style="color:var(--laranja)">03/06 a 22/06</strong> <span style="color:var(--cinza-claro)">(20 dias)</span> — Campanha <strong style="color:var(--offwhite)">[HWM] LEADS</strong> com objetivo de <strong style="color:var(--offwhite)">clique no link</strong> — leads de campanhas anteriores.<br><br>
-          <strong style="color:var(--verde)">23/06 a 03/07</strong> <span style="color:var(--cinza-claro)">(10 dias)</span> — Campanha <strong style="color:var(--offwhite)">[LEAD] [OFT MGA]</strong> com objetivo de <strong style="color:var(--offwhite)">mensagem WhatsApp</strong> — leads registrados no CRM.
-        </p>
+      <div class="kpi-card rs d1">
+        <span class="kpi-num" data-target="113">0</span>
+        <span class="kpi-label">Leads cadastrados</span>
+        <span class="kpi-sub">-3 vs. junho (116)</span>
       </div>
-      <div class="diag-box rv d4" style="border-left-color:var(--verde)">
-        <strong style="color:var(--verde)">💰 INVESTIMENTO TOTAL NO PERÍODO</strong>
-        <p style="margin-top:10px;"><strong style="color:var(--ouro);font-size:40px;font-family:'Rajdhani',sans-serif;line-height:1;">R$448,98</strong></p>
-        <p style="margin-top:8px;font-size:16px;color:var(--offwhite);">Gerenciador: <strong style="color:var(--offwhite)">R$300,74</strong> · Meta Business Suite: <strong style="color:#9B72CF">R$148,24</strong></p>
+      <div class="kpi-card rs d2" style="--ka:var(--verde)">
+        <span class="kpi-num" data-target="27">0</span>
+        <span class="kpi-label">Avançaram no funil</span>
+        <span class="kpi-sub">24% — vs. 7,8% em junho</span>
+      </div>
+      <div class="kpi-card rs d3" style="--ka:var(--azul)">
+        <span class="kpi-num" data-target="31">0</span>
+        <span class="kpi-label">Leads quentes reais</span>
+        <span class="kpi-sub">receita + orçamento confirmados</span>
+      </div>
+      <div class="kpi-card rs d4" style="--ka:var(--laranja)">
+        <span class="kpi-num" data-target="92">0</span>
+        <span class="kpi-label">Opportunity Score</span>
+        <span class="kpi-sub">Meta Ads — de 56 para 92</span>
       </div>
     </div>
-    <div class="diag-box rv d5">
-      <strong>DIAGNÓSTICO DO MÊS:</strong>
-      <p>Volume de leads <strong style="color:var(--ouro)">caiu 43%</strong> em relação ao mês anterior (209→120), mas a taxa de resposta <strong style="color:var(--verde)">triplicou</strong> (11,5%→35,8%). O período contou com <strong style="color:var(--ouro)">quatro origens distintas</strong> — tráfego pago gerenciado (44), campanha Meta Business Suite — Desconto R$200 (4), Corrida das Nações (36) e Manutenção Gratuita de Óculos (36). O comparativo de custo por lead entre as plataformas mostra diferença significativa — os dados detalhados estão no slide de Performance das Campanhas.</p>
+    <div class="diag-box rv d2">
+      <strong>LEITURA DO MÊS</strong>
+      <p>O volume de leads ficou estável, mas a qualidade do funil deu um salto: em junho só 7,8% dos leads saíam do Pré-Atendimento — em julho isso chegou a 24%. O investimento em tráfego mais que dobrou (R$448,98 → R$1.083,29), o que também elevou o custo por lead.</p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 3 — ANÁLISE POR CANAL -->
 <section class="slide bg-petroleo azul-accent" id="slide-3" data-slide="3">
   <div class="slide-inner">
-    <div class="rv"><h2>Análise por Canal de Origem</h2><p class="slide-sub">Quatro origens distintas no período — métricas separadas por canal</p><div class="divider"></div></div>
-    <div class="canal-4-grid">
-      <div class="canal-card rv d1" style="--cc:var(--azul)">
-        <p class="canal-title">📱 Tráfego Pago Gerenciado</p>
-        <span class="canal-num">44</span>
-        <span class="canal-label">leads captados</span>
-        <div class="canal-stats">
-          <div class="canal-stat">Responderam <span>18 (40,9%)</span></div>
-          <div class="canal-stat">Avançaram no funil <span>5</span></div>
-          <div class="canal-stat">Com receita <span>10</span></div>
-          <div class="canal-stat">Urgência Alta <span>7</span></div>
-          <div class="canal-stat">Investimento <span>R$300,74</span></div>
-          <div class="canal-stat">Custo por lead real <span style="color:var(--verde)">R$6,83</span></div>
-          <div class="canal-stat" style="border-top:1px solid rgba(74,154,180,.3);margin-top:4px;padding-top:8px;">Dias ativos no período <span style="color:var(--azul)">10 de 30 dias</span></div>
-          <div class="canal-stat">Período ativo <span style="color:var(--azul)">23/06 a 03/07</span></div>
-        </div>
+    <span class="tag rv">Diagnóstico Comercial</span>
+    <h2 class="rv d1">Comparativo de Leads Qualificados — Junho → Julho</h2>
+    <div class="divider rv d1"></div>
+
+    <div class="diag-box rv d2">
+      <strong>POR QUE OLHAR PELA QUALIFICAÇÃO, NÃO PELA ETAPA DO FUNIL</strong>
+      <p>A Jornada no CRM só avança de Pré-Atendimento pra Negociação depois de 4 etapas cumpridas na automação — mas na prática, muitos leads mandam a receita já no início da conversa e ficam "presos" no Pré-Atendimento mesmo sendo qualificados de verdade. Por isso, o comparativo abaixo usa o Raio-X (leitura manual das conversas) em vez da etapa do CRM: é o retrato mais honesto de quem realmente qualificou.</p>
+    </div>
+
+    <div class="compare-grid rv d3">
+      <div class="compare-col mes1">
+        <div class="compare-title">Junho</div>
+        <div class="compare-period">116 leads · R$448,98 investidos</div>
+        <div class="compare-row"><span class="compare-row-label">Só enviaram receita</span><span class="compare-row-val">1 (1%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Só pediram orçamento</span><span class="compare-row-val">4 (3%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Receita + orçamento (quente)</span><span class="compare-row-val">13 (11%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Total c/ receita</span><span class="compare-row-val">14 (12%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Total c/ orçamento</span><span class="compare-row-val">17 (15%)</span></div>
+        <div class="compare-row" style="border-top:1px solid rgba(255,255,255,.15);margin-top:8px;padding-top:12px"><span class="compare-row-label" style="color:var(--ouro);font-weight:700">Total qualificados</span><span class="compare-row-val" style="color:var(--ouro)">18 (16%)</span></div>
       </div>
-      <div class="canal-card rv d2" style="--cc:#9B72CF">
-        <p class="canal-title">🎯 Meta Business Suite<br><small style="font-size:12px;font-weight:400">Campanha Desconto R$200 na Armação</small></p>
-        <span class="canal-num">4</span>
-        <span class="canal-label">leads captados</span>
-        <div class="canal-stats">
-          <div class="canal-stat">Responderam <span>4 (100%)</span></div>
-          <div class="canal-stat">Avançaram no funil <span>1 (Visita)</span></div>
-          <div class="canal-stat">Com receita <span>4</span></div>
-          <div class="canal-stat">Urgência Alta <span>2</span></div>
-          <div class="canal-stat">Investimento <span>R$148,24</span></div>
-          <div class="canal-stat">Custo por lead real <span style="color:#9B72CF">R$37,06</span></div>
-          <div class="canal-stat" style="border-top:1px solid rgba(155,114,207,.3);margin-top:4px;padding-top:8px;">Dias ativos no período <span style="color:#9B72CF">5 de 30 dias</span></div>
-          <div class="canal-stat">Período ativo <span style="color:#9B72CF">23/06 a 28/06</span></div>
-        </div>
+      <div class="arrow-mid">
+        <span class="arrow-icon">➜</span>
+        <span class="arrow-label">EVOLUÇÃO</span>
       </div>
-      <div class="canal-card rv d3" style="--cc:var(--ouro)">
-        <p class="canal-title">🏃 Corrida das Nações</p>
-        <span class="canal-num">36</span>
-        <span class="canal-label">contatos em 08/06</span>
-        <div class="canal-stats">
-          <div class="canal-stat">Responderam <span style="color:var(--verde)">9 (25%)</span></div>
-          <div class="canal-stat">Não responderam <span>27 (75%)</span></div>
-          <div class="canal-stat">Em Negociação <span>1 (Janaina)</span></div>
-          <div class="canal-stat">Abordagem <span>Ativa (vendedora)</span></div>
-          <div class="canal-stat">Investimento <span>R$0,00</span></div>
-          <div class="canal-stat">Custo por lead <span>R$0,00</span></div>
-        </div>
+      <div class="compare-col mes2">
+        <div class="compare-title">Julho</div>
+        <div class="compare-period">113 leads · R$1.083,29 investidos</div>
+        <div class="compare-row"><span class="compare-row-label">Só enviaram receita</span><span class="compare-row-val">13 (12%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Só pediram orçamento</span><span class="compare-row-val">15 (13%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Receita + orçamento (quente)</span><span class="compare-row-val">31 (27%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Total c/ receita</span><span class="compare-row-val">44 (39%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Total c/ orçamento</span><span class="compare-row-val">46 (41%)</span></div>
+        <div class="compare-row" style="border-top:1px solid rgba(255,255,255,.15);margin-top:8px;padding-top:12px"><span class="compare-row-label" style="color:var(--ouro);font-weight:700">Total qualificados</span><span class="compare-row-val" style="color:var(--ouro)">59 (52%)</span></div>
       </div>
-      <div class="canal-card rv d4" style="--cc:var(--verde)">
-        <p class="canal-title">🔧 Manutenção Gratuita de Óculos</p>
-        <span class="canal-num">36</span>
-        <span class="canal-label">contatos em 23/06</span>
-        <div class="canal-stats">
-          <div class="canal-stat">Responderam <span style="color:var(--laranja)">4 (11%)</span></div>
-          <div class="canal-stat">Não responderam <span>32 (89%)</span></div>
-          <div class="canal-stat">Avançaram no funil <span>0</span></div>
-          <div class="canal-stat">Abordagem <span>Ativa (vendedora)</span></div>
-          <div class="canal-stat">Investimento <span>R$0,00</span></div>
-          <div class="canal-stat">Custo por lead <span>R$0,00</span></div>
-        </div>
-      </div>
+    </div>
+
+    <div class="diag-box rv d4" style="margin-top:28px;border-left-color:var(--verde)">
+      <strong style="color:var(--verde)">LEITURA</strong>
+      <p>A taxa geral de qualificação (recebeu receita, pediu orçamento, ou os dois) mais que triplicou: de 16% em junho pra 52% em julho — mais da metade dos leads de julho mostrou algum sinal real de intenção de compra. Receita isolada saltou de 12% pra 39%, orçamento de 15% pra 41%. Os dois indicadores subiram junto, o que mostra que julho não trouxe só mais gente "cotando preço": trouxe gente com receita em mãos, mais perto do fechamento.</p>
+    </div>
+
+    <div class="diag-box rv d4" style="margin-top:16px;border-left-color:var(--verde)">
+      <strong style="color:var(--verde)">OPORTUNIDADE: FECHAR O CICLO DA VENDA NO CRM</strong>
+      <p>Em toda a história do CRM, nenhum lead foi marcado como "Venda" — mesmo em casos confirmados por escrito na conversa. Isso significa que hoje não dá pra medir a taxa de conversão real do funil, nem cruzar qual campanha realmente gerou venda. A recomendação é simples: pelo menos nome e número de WhatsApp de quem comprou (presencial ou pelo CRM) sejam informados e registrados. Com esse dado básico já dá pra fechar o ciclo e enxergar o retorno real do investimento em tráfego.</p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 4 — COMPARATIVO -->
 <section class="slide" id="slide-4" data-slide="4">
   <div class="slide-inner">
-    <div class="rv"><h2>Comparativo — Mês 1 vs Mês 2</h2><p class="slide-sub">Evolução dos principais indicadores entre os dois períodos</p><div class="divider"></div></div>
-    <div class="compare-grid">
-      <div class="compare-col mes1 rl d1">
-        <p class="compare-title" style="color:var(--ouro-esc)">MÊS 1</p>
-        <p class="compare-period">11 de Maio — 02 de Junho de 2026</p>
-        <div class="compare-row"><span class="compare-row-label">Volume de leads</span><span class="compare-row-val" style="color:var(--ouro-esc)">209</span></div>
-        <div class="compare-row"><span class="compare-row-label">Taxa de resposta</span><span class="compare-row-val" style="color:var(--vermelho)">11,5%</span></div>
-        <div class="compare-row"><span class="compare-row-label">Avançaram no funil</span><span class="compare-row-val" style="color:var(--ouro-esc)">9</span></div>
-        <div class="compare-row"><span class="compare-row-label">Urgência Alta</span><span class="compare-row-val" style="color:var(--ouro-esc)">13</span></div>
-        <div class="compare-row"><span class="compare-row-label">Receitas coletadas</span><span class="compare-row-val" style="color:var(--ouro-esc)">8</span></div>
-        <div class="compare-row"><span class="compare-row-label">Vendas registradas</span><span class="compare-row-val" style="color:var(--ouro-esc)">1</span></div>
-      </div>
-      <div class="arrow-mid rv d3"><span class="arrow-icon">▶</span><p class="arrow-label">MÊS 2</p></div>
-      <div class="compare-col mes2 rr d2">
-        <p class="compare-title" style="color:var(--verde)">MÊS 2</p>
-        <p class="compare-period">03 de Junho — 03 de Julho de 2026</p>
-        <div class="compare-row"><span class="compare-row-label">Volume de leads</span><span class="compare-row-val" style="color:var(--laranja)">120 <small style="font-size:12px;color:var(--cinza)">↓43%</small></span></div>
-        <div class="compare-row"><span class="compare-row-label">Taxa de resposta</span><span class="compare-row-val" style="color:var(--verde)">35,8% <small style="font-size:12px;color:var(--verde)">↑3x</small></span></div>
-        <div class="compare-row"><span class="compare-row-label">Avançaram no funil</span><span class="compare-row-val" style="color:var(--verde)">6 <small style="font-size:12px;color:var(--cinza)">(tráfego)</small></span></div>
-        <div class="compare-row"><span class="compare-row-label">Urgência Alta</span><span class="compare-row-val" style="color:var(--verde)">15 <small style="font-size:12px;color:var(--verde)">↑2</small></span></div>
-        <div class="compare-row"><span class="compare-row-label">Receitas coletadas</span><span class="compare-row-val" style="color:var(--verde)">11 <small style="font-size:12px;color:var(--verde)">↑3</small></span></div>
-        <div class="compare-row"><span class="compare-row-label">Vendas registradas</span><span class="compare-row-val" style="color:var(--cinza)">0 <small style="font-size:12px;color:var(--cinza)">CRM</small></span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 5 — PERFORMANCE CAMPANHAS META -->
-<section class="slide bg-petroleo azul-accent" id="slide-5" data-slide="5">
-  <div class="slide-inner">
-    <div class="rv"><h2>Performance das Campanhas Meta</h2><p class="slide-sub">Período 03/06 a 03/07 · Dados: Gerenciador de Anúncios</p><div class="divider"></div></div>
-    <div class="destaque-box rv d1" style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;padding:0;">
-      <div style="padding:24px 28px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;">
-        <div class="destaque-item">
-          <span style="font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:2px;color:var(--azul);text-transform:uppercase;display:block;margin-bottom:8px;">Gerenciador de Anúncios</span>
-        </div>
-        <div class="destaque-item"><span class="destaque-num">R$300,74</span><p class="destaque-label">Investimento</p></div>
-        <div class="destaque-item"><span class="destaque-num" style="color:var(--verde)">R$6,83</span><p class="destaque-label">Custo por lead real</p></div>
-      </div>
-      <div style="background:rgba(255,255,255,0.08);width:1px;margin:16px 0;"></div>
-      <div style="padding:24px 28px;display:flex;gap:32px;align-items:center;flex-wrap:wrap;">
-        <div class="destaque-item">
-          <span style="font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:2px;color:#9B72CF;text-transform:uppercase;display:block;margin-bottom:8px;">Meta Business Suite</span>
-        </div>
-        <div class="destaque-item"><span class="destaque-num" style="color:#9B72CF">R$148,24</span><p class="destaque-label">Investimento</p></div>
-        <div class="destaque-item"><span class="destaque-num" style="color:#9B72CF">R$37,06</span><p class="destaque-label">Custo por lead real</p></div>
-      </div>
-    </div>
+    <span class="tag rv">Raio-X de Qualificação</span>
+    <h2 class="rv d1">O que as 113 conversas de julho mostram</h2>
+    <div class="divider rv d1"></div>
+    <p class="slide-sub rv d2" style="font-size:22px;margin-bottom:8px">Leitura manual de cada conversa — não pelo campo do sistema, pelo que o lead realmente disse.</p>
     <table class="meta-table rv d2">
-      <thead>
-        <tr><th>Campanha</th><th>Status</th><th style="color:var(--laranja)">Conversas Meta ⚠️</th><th>Gasto</th><th>Impressões</th><th>Alcance</th><th>Freq.</th><th>CTR</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>[LEAD] [OFT MGA] 062426</td><td><span class="badge-ativo">ATIVA</span></td><td class="num" style="color:var(--cinza);font-style:italic">16 (estimado)</td><td class="num">R$145,93</td><td>6.493</td><td>4.388</td><td>1,48</td><td style="color:var(--verde)">1,05%</td></tr>
-        <tr><td>[ENG] [INS][MGA] 062326</td><td><span class="badge-ativo">ATIVA</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (estimado)</td><td class="num">R$68,19</td><td>1.991</td><td>1.591</td><td>1,25</td><td style="color:var(--verde)">1,10%</td></tr>
-        <tr><td>[ENG] [OFT MGA] [CONV] 062326</td><td><span class="badge-desativ">DESATIVADA</span></td><td class="num" style="color:var(--cinza);font-style:italic">3 (estimado)</td><td class="num">R$68,18</td><td>2.423</td><td>2.044</td><td>1,19</td><td style="color:var(--laranja)">0,78%</td></tr>
-        <tr><td>[HWM] - LEADS Cópia</td><td><span class="badge-desativ">DESATIVADA</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (estimado)</td><td class="num">R$18,44</td><td>697</td><td>616</td><td>1,13</td><td style="color:var(--verde)">1,58%</td></tr>
-      </tbody>
+      <tr><th>Categoria</th><th>Leads</th><th>%</th></tr>
+      <tr><td>Entraram em contato e não responderam</td><td class="num">32</td><td>28%</td></tr>
+      <tr><td>Só enviaram receita (sem orçamento)</td><td class="num">13</td><td>12%</td></tr>
+      <tr><td>Só pediram orçamento (sem receita)</td><td class="num">15</td><td>13%</td></tr>
+      <tr><td style="color:var(--ouro);font-weight:700">Receita + orçamento (lead quente real)</td><td class="num" style="color:var(--ouro)">31</td><td style="color:var(--ouro);font-weight:700">27%</td></tr>
+      <tr><td>Engajaram sem receita nem orçamento</td><td class="num">20</td><td>18%</td></tr>
+      <tr><td>Confirmaram visita com dia real</td><td class="num">3</td><td>3%</td></tr>
     </table>
-    <p class="rv" style="font-size:12px;color:var(--laranja);margin-top:10px;font-style:italic;">⚠️ Os números de conversas apontados pelo Gerenciador Meta são estimativas baseadas em janela de atribuição — não representam o número real de leads. O CRM (Notion) é a fonte confiável: registra cada lead que de fato entrou em contato pelo WhatsApp. Esta é uma limitação conhecida da plataforma Meta e não afeta a qualidade da gestão das campanhas.</p>
-    <div class="diag-box rv d3" style="margin-top:16px;border-left-color:var(--vermelho)">
-      <strong style="color:var(--vermelho)">COMPARATIVO — CUSTO POR LEAD REAL:</strong>
-      <p>Gerenciador de Anúncios: R$300,74 investidos ÷ 44 leads registrados no CRM = <strong style="color:var(--verde)">R$6,83 por lead</strong>. Meta Business Suite — Campanha Desconto R$200: R$148,24 investidos ÷ 4 leads registrados no CRM = <strong style="color:#9B72CF">R$37,06 por lead</strong>. Custo calculado com base nos leads reais registrados no CRM — mais preciso que a atribuição estimada do Gerenciador Meta.</p>
+    <div class="diag-box rv d3">
+      <strong>SUGESTÃO</strong>
+      <p>A vendedora responde bem e dá o preço — o próximo passo natural é devolver a pergunta "qual dia fica bom pra você vir?" pra já direcionar o lead qualificado pra uma visita. Outra alternativa pra quando o cliente esfria depois da cotação: perguntar se ele já tem outro orçamento em mãos e pedir pra não fechar em outra loja antes de mandar a proposta de volta — assim dá pra tentar cobrir o preço antes de perder a venda.</p>
+    </div>
+    <p class="rv d4" style="font-size:22px;color:var(--cinza-claro);margin-top:20px">Lead mais qualificado do mês: <b style="color:var(--offwhite)">Rodrigo Campos</b> — receita completa, orçamento técnico de 3 marcas, perguntou forma de pagamento e prazo. Só faltou fechar a visita.</p>
+    <p class="rv d4" style="font-size:18px;color:var(--cinza);margin-top:14px;font-style:italic">A lista completa lead a lead, com WhatsApp clicável e sugestão de retorno para cada um, vai num documento separado para uso da vendedora.</p>
+  </div>
+</section>
+
+<section class="slide bg-petroleo" id="slide-5" data-slide="5">
+  <div class="slide-inner">
+    <span class="tag rv">Tráfego Pago</span>
+    <h2 class="rv d1">Diagnóstico Meta Ads</h2>
+    <div class="divider rv d1"></div>
+    <div class="kpi-grid rv d2">
+      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="49037">0</span><span class="kpi-label">Impressões</span></div>
+      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="531">0</span><span class="kpi-label">Cliques (CTR 1,08%)</span></div>
+      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="92">0</span><span class="kpi-label">Opportunity Score</span></div>
+      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="19432">0</span><span class="kpi-label">Alcance</span></div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 6 — PERFORMANCE POR CONJUNTO -->
 <section class="slide" id="slide-6" data-slide="6">
   <div class="slide-inner">
-    <div class="rv"><h2>Performance por Conjunto de Anúncios</h2><p class="slide-sub">Desempenho por público segmentado · 03/06 a 03/07</p><div class="divider"></div></div>
-    <table class="meta-table rv d1">
-      <thead>
-        <tr><th>Conjunto</th><th>Status</th><th style="color:var(--laranja)">Conversas Meta ⚠️</th><th>Gasto</th><th>Impressões</th><th>Alcance</th><th>Freq.</th><th>CTR</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>[01] [OFT MGA] [F] 240626</td><td><span class="badge-ativo">ATIVO</span></td><td class="num" style="color:var(--cinza);font-style:italic">16 (est.)</td><td class="num">R$146,06</td><td>6.500</td><td>4.393</td><td style="color:var(--verde)">1,48</td><td style="color:var(--verde)">1,05%</td></tr>
-        <tr><td>[01] [MGA] [F] [INS] 300626</td><td><span class="badge-ativo">ATIVO</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (est.)</td><td class="num">R$68,31</td><td>1.995</td><td>1.593</td><td style="color:var(--verde)">1,25</td><td style="color:var(--verde)">1,10%</td></tr>
-        <tr><td>[01] [OFT MGA] [F] 240626 (v2)</td><td><span class="badge-desativ">DESATIVADO</span></td><td class="num" style="color:var(--cinza);font-style:italic">3 (est.)</td><td class="num">R$68,18</td><td>2.423</td><td>2.044</td><td>1,19</td><td style="color:var(--laranja)">0,78%</td></tr>
-        <tr><td>00 - ABERTO - MARINGÁ 21-05</td><td><span class="badge-desativ">DESATIVADO</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (est.)</td><td class="num">R$18,44</td><td>697</td><td>616</td><td>1,13</td><td style="color:var(--verde)">1,58%</td></tr>
-      </tbody>
-    </table>
-    <div class="diag-box rv d2" style="margin-top:20px">
-      <strong>OBSERVAÇÃO DE PÚBLICO:</strong>
-      <p>O conjunto <strong style="color:var(--verde)">[OFT MGA]</strong> — segmentado para público com interesse em oftalmologia — entregou 100% das conversas iniciadas e o melhor custo por resultado. Frequência de 1,48 indica público ainda com espaço para crescer antes de saturar.</p>
+    <span class="tag rv">Criativos</span>
+    <h2 class="rv d1">Sugestão de Produção</h2>
+    <div class="divider rv d1"></div>
+    <div class="diag-box rv d2">
+      <strong>ANÚNCIO PRINCIPAL PERDENDO FÔLEGO</strong>
+      <p>O anúncio em vídeo "[Composto 399,90 6x sem juros]" consome 79% da verba (R$859,55), mas está numa queda de eficiência. Um dos sinais disso é o aumento de frequência — quando a mesma pessoa vê o anúncio repetidas vezes, é normalmente porque o criativo está desgastando e perdendo força.</p>
+    </div>
+    <div class="diag-box rv d3" style="border-left-color:var(--verde)">
+      <strong style="color:var(--verde)">RECOMENDAÇÃO</strong>
+      <p>Migrar para formato Reels vertical 9:16 com áudio — estimativa do Meta de até 5% menos custo por resposta. Além disso, aumentar o número de variações de criativo (vídeo e estático) em produção, para reduzir a dependência de um único anúncio e testar qual formato performa melhor.</p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 7 — PERFORMANCE POR CRIATIVO -->
 <section class="slide bg-petroleo azul-accent" id="slide-7" data-slide="7">
   <div class="slide-inner">
-    <div class="rv"><h2>Performance por Criativo</h2><p class="slide-sub">Desempenho individual de cada anúncio no período</p><div class="divider"></div></div>
-
-    <p class="rv" style="font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;color:var(--azul);text-transform:uppercase;margin-bottom:8px;">Gerenciador de Anúncios</p>
-    <table class="meta-table rv d1" style="margin-top:0">
-      <thead>
-        <tr><th>Anúncio</th><th>Status</th><th style="color:var(--laranja)">Conversas ⚠️</th><th>Gasto</th><th>Impressões</th><th>Alcance</th><th>CTR</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>[AD 01] COMPTO 399,90 6X SJ — Cópia</td><td><span class="badge-ativo">ATIVO</span></td><td class="num" style="color:var(--cinza);font-style:italic">16 (est.)</td><td class="num">R$142,48</td><td>6.343</td><td>4.296</td><td style="color:var(--verde)">1,07%</td></tr>
-        <tr><td>[AD 01] COMPTO 399,90 6X SJ</td><td><span class="badge-desativ">DESATIVADO</span></td><td class="num" style="color:var(--cinza);font-style:italic">3 (est.)</td><td class="num">R$67,33</td><td>2.381</td><td>2.020</td><td style="color:var(--laranja)">0,80%</td></tr>
-        <tr><td>[AD 01] COMPTO 399,90 6X SJ — Cópia (INS)</td><td><span class="badge-ativo">ATIVO</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (est.)</td><td class="num">R$65,41</td><td>1.945</td><td>1.554</td><td style="color:var(--verde)">1,13%</td></tr>
-        <tr><td>Ad 01 [VID] - Óculos completo (HWM)</td><td><span class="badge-desativ">DESATIVADO</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (est.)</td><td class="num">R$17,87</td><td>688</td><td>611</td><td style="color:var(--verde)">1,60%</td></tr>
-        <tr><td>[AD 03] VID [SINT] 230626</td><td><span class="badge-ativo">ATIVO</span></td><td class="num" style="color:var(--cinza);font-style:italic">— (est.)</td><td class="num">R$3,58</td><td>158</td><td>150</td><td style="color:var(--cinza)">—</td></tr>
-      </tbody>
-    </table>
-
-    <p class="rv" style="font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:1px;color:#9B72CF;text-transform:uppercase;margin:16px 0 8px;">Meta Business Suite</p>
-    <table class="meta-table rv d2" style="margin-top:0">
-      <thead>
-        <tr><th>Criativo</th><th>Status</th><th>Conversas CRM ✓</th><th>Gasto</th><th>Visualizações</th><th>Alcance</th><th>Engajamento</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>VOCÊ JÁ TEM SUA RECEITA MÉDICA? — Desconto R$200 na Armação</td><td><span class="badge-desativ">CONCLUÍDO</span></td><td class="num" style="color:#9B72CF">4</td><td class="num">R$148,24</td><td>6.220</td><td>3.553</td><td style="color:#9B72CF">45 interações</td></tr>
-      </tbody>
-    </table>
-
-    <div class="diag-box rv d3" style="margin-top:16px;border-left-color:#9B72CF">
-      <strong style="color:#9B72CF">💡 SUGESTÃO ESTRATÉGICA — CRIATIVO META BUSINESS SUITE:</strong>
-      <p>O criativo "VOCÊ JÁ TEM SUA RECEITA MÉDICA?" veiculado no Meta Business Suite apresentou <strong style="color:#9B72CF">100% de taxa de resposta</strong> entre os leads que chegaram — todos os 4 responderam, 1 avançou para Visita e os demais estão em Pré-Atendimento com receita confirmada. A abordagem segmentada para quem já tem receita médica demonstrou atrair um perfil de lead mais qualificado e com maior intenção de compra. <strong style="color:var(--ouro)">Recomendação: testar esse mesmo conceito de criativo estruturado como campanha no Gerenciador de Anúncios</strong> — com segmentação profissional de público, pixel configurado e otimização por conversa — para verificar se o desempenho de qualificação se mantém com maior escala e menor custo por lead.</p>
+    <span class="tag rv">Conversão Real</span>
+    <h2 class="rv d1">Cruzamento Anúncio → Venda</h2>
+    <div class="divider rv d1"></div>
+    <div class="diag-box rv d2" style="border-left-color:var(--vermelho)">
+      <strong style="color:var(--vermelho)">NÃO FOI POSSÍVEL FECHAR ESSE CRUZAMENTO ESTE MÊS</strong>
+      <p>Nenhum lead foi marcado como "Venda" no CRM em julho, e o campo Origem segue quase vazio (6 de 113 preenchidos). Sem esses dois dados, não dá pra dizer com confiança qual anúncio específico gerou venda — só qual gerou lead. São lacunas estruturais da operação, não do relatório.</p>
+    </div>
+    <div class="diag-box rv d3" style="border-left-color:var(--verde)">
+      <strong style="color:var(--verde)">RECOMENDAÇÃO</strong>
+      <p>Pedir para a loja informar nome e número de WhatsApp de quem comprou presencialmente (mesmo sem ter vindo pelo CRM), pra dar pra cruzar essas vendas com os leads e enxergar quais campanhas realmente geraram conversão — não só lead.</p>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 8 — LEADS COM RECEITA PARA REATIVAR -->
 <section class="slide" id="slide-8" data-slide="8">
   <div class="slide-inner">
-    <div class="rv"><h2>Leads com Receita — Reativar esta Semana</h2><p class="slide-sub">Todos os 11 leads com receita confirmada · Urgência Alta · Prioridade máxima</p><div class="divider"></div></div>
-    <div class="leads-list">
-      <div class="lead-card rv d1" style="--lc:var(--ouro)">
-        <div><p class="lead-name">Décio Gongora  ·  15 msgs</p><a href="https://wa.me/554499747526" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9974-7526</a><p class="lead-sit">Situação: Avançou para Visita — confirmar se veio à loja</p><p class="lead-acao">Confirmar se realizou a visita. Se não veio, reagendar com urgência</p></div>
-        <div class="badges"><span class="badge badge-n">VISITA</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d2" style="--lc:var(--verde)">
-        <div><p class="lead-name">😁  ·  10 msgs</p><a href="https://wa.me/556799283829" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (67) 9928-3829</a><p class="lead-sit">Situação: Em Negociação — Troca por Necessidade</p><p class="lead-acao">Retomar conversa — perguntar se decidiu, se viu em outro lugar</p></div>
-        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d3" style="--lc:var(--verde)">
-        <div><p class="lead-name">⚖️Daiana❤️  ·  2 msgs</p><a href="https://wa.me/554498521549" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9852-1549</a><p class="lead-sit">Situação: Em Negociação — Troca Programada</p><p class="lead-acao">Retomar conversa e convidar para visita à loja</p></div>
-        <div class="badges"><span class="badge badge-n">NEGOCIAÇÃO</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d4" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Giovana Veiga  ·  13 msgs</p><a href="https://wa.me/554499945175" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9994-5175</a><p class="lead-sit">Situação: Pré-atendimento — muita interação, Troca Programada</p><p class="lead-acao">Convidar para consulta presencial. Perguntar se já fechou em outra loja — se não fechou, pedir o valor que tem e oferecer para cobrir ou melhorar</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d5" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Rosi  ·  7 msgs</p><a href="https://wa.me/554497569548" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9756-9548</a><p class="lead-sit">Situação: Pré-atendimento — Troca Programada, Urgência Alta</p><p class="lead-acao">Perguntar se já decidiu e convidar para vir à loja</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d6" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Adriana Lobato  ·  4 msgs</p><a href="https://wa.me/559691772098" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (96) 9177-2098</a><p class="lead-sit">Situação: Pré-atendimento — Urgência Alta, receita confirmada</p><p class="lead-acao">Convidar para consultoria presencial gratuita</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d7" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Millena Azevedo  ·  4 msgs</p><a href="https://wa.me/5518981224114" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (18) 9 8122-4114</a><p class="lead-sit">Situação: Pré-atendimento — Troca Programada, Urgência Alta</p><p class="lead-acao">Solicitar o envio da receita. Perguntar se já fechou o óculos — se não, se já tem algum valor de outra loja para ver o que consegue melhorar</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d8" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">𝕰𝖑𝖎𝖊𝖙𝖊 𝕲𝖔𝖒𝖊𝖘  ·  4 msgs</p><a href="https://wa.me/554499858051" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9985-8051</a><p class="lead-sit">Situação: Pré-atendimento — Urgência Alta, receita confirmada</p><p class="lead-acao">Solicitar a receita. Perguntar se já fechou — se não fechou e tiver valor de outra loja, pedir para compartilhar e ver o que consegue melhorar</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d8" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Maria Laura  ·  3 msgs</p><a href="https://wa.me/554488233713" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 8823-3713</a><p class="lead-sit">Situação: Pré-atendimento — Campanha desconto R$200, Troca Programada</p><p class="lead-acao">Reforçar o benefício da armação gratuita e convidar para vir à loja</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d8" style="--lc:var(--vermelho)">
-        <div><p class="lead-name">Fernanda  ·  3 msgs</p><a href="https://wa.me/554499719069" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (44) 9971-9069</a><p class="lead-sit">Situação: Pré-atendimento — Urgência Alta, receita confirmada</p><p class="lead-acao">Solicitar a receita. Perguntar se já fechou — se não fechou e tiver valor de outra loja, pedir para compartilhar e ver o que consegue melhorar</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-      <div class="lead-card rv d8" style="--lc:var(--laranja)">
-        <div><p class="lead-name">Elaine  ·  2 msgs</p><a href="https://wa.me/554398537979" target="_blank" style="font-size:14px;color:var(--verde);font-family:'DM Sans',sans-serif;font-weight:400;display:block;margin-top:3px;margin-bottom:3px;text-decoration:none;">📱 (43) 9853-7979</a><p class="lead-sit">Situação: Pré-atendimento — Troca por Necessidade, lead recente (03/07)</p><p class="lead-acao">Solicitar a receita. Perguntar se já fechou — se não fechou e tiver valor de outra loja, pedir para compartilhar e ver o que consegue melhorar</p></div>
-        <div class="badges"><span class="badge badge-n">PRÉ-ATEND.</span><span class="badge badge-ua">URG: ALTA</span><span class="badge badge-re">RECEITA ✓</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 9 — LEADS QUALIFICADOS SEM RECEITA FORMAL -->
-
-
-<!-- SLIDE 9 — PRÓXIMOS PASSOS -->
-<section class="slide bg-petroleo azul-accent" id="slide-9" data-slide="9">
-  <div class="slide-inner">
-    <div class="rv"><h2>Próximos Passos</h2><p class="slide-sub">Ações prioritárias + visão estratégica do próximo ciclo</p><div class="divider"></div></div>
+    <span class="tag rv">Próximos Passos</span>
+    <h2 class="rv d1">Pendências de Julho</h2>
+    <div class="divider rv d1"></div>
     <div class="steps">
-      <div class="step-card rv d1" style="--sc:var(--vermelho);border-color:rgba(224,85,85,.25)">
+      <div class="step-card rl d1">
         <span class="step-num">01</span>
-        <div>
-          <p class="step-title" style="color:var(--vermelho)">Vendedora — Retomar leads em negociação e reativação</p>
-          <p class="step-desc">Retomar contato com cada lead listado nos slides anteriores, seguindo as sugestões dadas individualmente para cada um. Priorizar os leads com urgência Alta e receita em mãos.</p>
-          
-        </div>
+        <div><div class="step-title">Testar mais variações de criativo</div><p class="step-desc">Vídeo e estático, incluindo formato Reels vertical 9:16 com áudio, pra reduzir a dependência de um único anúncio, baixar o custo e aumentar a otimização.</p></div>
       </div>
-      
-      <div class="step-card rv d3" style="--sc:var(--verde);border-color:rgba(76,175,125,.2)">
+      <div class="step-card rl d2">
         <span class="step-num">02</span>
-        <div>
-          <p class="step-title" style="color:var(--verde)">Tráfego Maringá — Teste de Criativo Vídeo vs Estático</p>
-          <p class="step-desc">Estruturar no Gerenciador de Anúncios um teste A/B com dois formatos do mesmo conceito criativo: vídeo e imagem estática. Deixar o algoritmo da Meta com liberdade para distribuir o orçamento entre os dois formatos e impulsionar automaticamente o que entregar melhor performance — sem intervenção manual no período de aprendizado.</p>
-          
-        </div>
+        <div><div class="step-title">Reativar os 31 leads quentes</div><p class="step-desc">Lista com WhatsApp clicável e sugestão por lead, entregue separadamente para a vendedora.</p></div>
       </div>
-
-      <div class="step-card rv d4" style="--sc:#9B72CF;border-color:rgba(155,114,207,.2)">
+      <div class="step-card rl d3">
         <span class="step-num">03</span>
-        <div>
-          <p class="step-title" style="color:#9B72CF">Criativos — Diversificação de Formatos</p>
-          <p class="step-desc">Produzir novos criativos explorando diferentes abordagens para testar nas próximas campanhas. Sugestões detalhadas no próximo relatório.</p>
-        </div>
+        <div><div class="step-title">Solicitar dados de quem comprou presencialmente</div><p class="step-desc">Nome e WhatsApp de quem converteu na loja, pra cruzar com os leads e enxergar quais campanhas realmente geram venda, não só lead.</p></div>
       </div>
-
     </div>
   </div>
 </section>
 
 <footer>
-  <p>@brunopro.tech  ·  Ótica Herval Select  ·  Relatório Junho 2026</p>
+  <p>@brunopro.tech  ·  Ótica Herval Select  ·  Relatório Julho 2026</p>
   <p>Gestão de Automação com IA  ·  v2.0</p>
 </footer>
-
 <script>
-// CURSOR
 const cdot=document.getElementById('cdot'),cring=document.getElementById('cring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cdot.style.left=mx+'px';cdot.style.top=my+'px';});
@@ -595,7 +429,6 @@ document.querySelectorAll('.kpi-card,.lead-card,.step-card,.canal-card,.nav-dot'
   el.addEventListener('mouseenter',()=>{cring.style.transform='translate(-50%,-50%) scale(1.8)';cring.style.opacity='.9';});
   el.addEventListener('mouseleave',()=>{cring.style.transform='translate(-50%,-50%) scale(1)';cring.style.opacity='.6';});
 });
-// CANVAS
 const canvas=document.getElementById('bg-canvas');
 const ctx=canvas.getContext('2d');
 let W,H,pts=[];
@@ -606,16 +439,12 @@ for(let i=0;i<100;i++)pts.push(new Pt());
 function drawLines(){for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<90){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(232,212,77,${.035*(1-d/90)})`;ctx.lineWidth=.5;ctx.stroke();}}}
 function animPts(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{p.update();p.draw();});drawLines();requestAnimationFrame(animPts);}
 animPts();
-// PROGRESS
 window.addEventListener('scroll',()=>{const el=document.getElementById('progress');const h=document.documentElement.scrollHeight-window.innerHeight;el.style.width=(window.scrollY/h*100)+'%';});
-// NAV DOTS
 const slides=document.querySelectorAll('.slide');
 const dotsC=document.getElementById('nav-dots');
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='nav-dot'+(i===0?' active':'');d.addEventListener('click',()=>document.getElementById('slide-'+(i+1)).scrollIntoView({behavior:'smooth'}));dotsC.appendChild(d);});
-// OBSERVER
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.rv,.rl,.rr,.rs').forEach(el=>el.classList.add('vis'));const idx=parseInt(e.target.dataset.slide)-1;document.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));e.target.querySelectorAll('[data-target]').forEach(el=>{if(el.dataset.counted)return;el.dataset.counted=1;const t=parseInt(el.dataset.target);let c=0;const s=Math.max(1,Math.ceil(t/50));const ti=setInterval(()=>{c=Math.min(c+s,t);el.textContent=c;if(c>=t)clearInterval(ti);},28);});}});},{threshold:.12});
 slides.forEach(s=>obs.observe(s));
-// GLITCH
 const h1=document.querySelector('h1');
 if(h1){h1.addEventListener('mouseenter',()=>{h1.style.animation='gh .4s steps(2) 2';});h1.addEventListener('animationend',()=>{h1.style.animation='';});}
 const st=document.createElement('style');
