@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ótica Herval Select — Relatório Julho 2026</title>
+<title>Ótica Herval Select — Relatório Quinzenal 31/08-13/09/2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root{--ouro:#E8D44D;--ouro-esc:#A89820;--azul:#4A9AB4;--carvao:#0D0C04;--petroleo:#0D2A36;--offwhite:#F5F2E8;--vermelho:#E05555;--verde:#4CAF7D;--laranja:#E8943A;--cinza:#888;--cinza-claro:#CCCCCC;}
@@ -92,6 +92,7 @@ h2{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:clamp(46px,6vw,70
 /* LEAD CARDS */
 .leads-list{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
 .lead-card{background:#141408;border:1px solid rgba(255,255,255,.07);border-left:5px solid var(--lc,var(--vermelho));display:grid;grid-template-columns:1fr auto;gap:16px;padding:18px 20px;transition:all .35s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden;}
+.lead-list{display:flex;flex-direction:column;gap:12px;margin-top:28px;}
 .lead-card:hover{transform:translateX(6px);border-color:var(--lc,var(--vermelho));}
 .lead-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:29px;color:var(--lc,var(--vermelho));margin-bottom:4px;}
 .lead-sit{font-size:22px;color:var(--cinza-claro);margin-bottom:5px;line-height:1.4;}
@@ -227,217 +228,233 @@ footer p{font-size:16px;color:var(--ouro-esc);letter-spacing:1px;}
 <section class="slide" id="slide-1" data-slide="1">
   <div class="scan-line"></div>
   <div class="slide-inner">
-    <span class="tag">Relatório Mensal</span>
-    <h1>Julho<br><em>2026</em></h1>
-    <p class="capa-sub">Ótica Herval Select — Diagnóstico Comercial e Tráfego Pago</p>
+    <div class="rv d1"><p class="tag">Relatório Quinzenal · Visão Gerencial</p><div class="divider" style="width:140px;margin:12px 0;"></div></div>
+    <div class="rv d2"><h1>ÓTICA HERVAL<br><em>SELECT</em></h1></div>
+    <div class="rv d3"><p class="capa-sub">CRM Automatizado · Assistente Clara · Tráfego Pago</p></div>
     <div class="capa-meta">
-      <div class="meta-item"><label>Período</label><p>01 a 31 de Julho / 2026</p></div>
-      <div class="meta-item"><label>Preparado por</label><p>Bruno — Gestão de Automação com IA</p></div>
-      <div class="meta-item"><label>Leads no mês</label><p>113 cadastros</p></div>
-      <div class="meta-item"><label>Investimento em tráfego</label><p>R$ 1.083,29</p></div>
+      <div class="meta-item rv d4"><label>Período</label><p>31 de Agosto a 13 de Setembro de 2026 (2 semanas)</p></div>
+      <div class="meta-item rv d5"><label>Preparado por</label><p>Bruno · @brunopro.tech</p></div>
+      <div class="meta-item rv d6" style="grid-column:1/-1"><label>Para</label><p>Léo e James · Sócios, Ótica Herval Select · Maringá/PR</p></div>
     </div>
   </div>
 </section>
 
 <section class="slide" id="slide-2" data-slide="2">
   <div class="slide-inner">
-    <span class="tag rv">Painel Geral</span>
-    <h2 class="rv d1">O mês em números</h2>
-    <div class="divider rv d1"></div>
-    <div class="kpi-grid">
-      <div class="kpi-card rs d1">
-        <span class="kpi-num" data-target="113">0</span>
-        <span class="kpi-label">Leads cadastrados</span>
-        <span class="kpi-sub">-3 vs. junho (116)</span>
-      </div>
-      <div class="kpi-card rs d2" style="--ka:var(--verde)">
-        <span class="kpi-num" data-target="27">0</span>
-        <span class="kpi-label">Avançaram no funil</span>
-        <span class="kpi-sub">24% — vs. 7,8% em junho</span>
-      </div>
-      <div class="kpi-card rs d3" style="--ka:var(--azul)">
-        <span class="kpi-num" data-target="58">0</span>
-        <span class="kpi-label">Leads qualificados</span>
-        <span class="kpi-sub">enviaram receita e/ou pediram orçamento</span>
-      </div>
-    </div>
-    <div class="diag-box rv d2">
-      <strong>LEITURA DO MÊS</strong>
-      <p>O volume de leads ficou estável, mas a qualidade do funil deu um salto: em junho só 7,8% dos leads saíam do Pré-Atendimento — em julho isso chegou a 24%. O investimento em tráfego mais que dobrou (R$448,98 → R$1.083,29), o que também elevou o custo por lead.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide bg-petroleo azul-accent" id="slide-3" data-slide="3">
-  <div class="slide-inner">
-    <span class="tag rv">Diagnóstico Comercial</span>
-    <h2 class="rv d1">Comparativo de Leads Qualificados — Junho → Julho</h2>
-    <div class="divider rv d1"></div>
-
-    <div class="diag-box rv d2">
-      <strong>POR QUE OLHAR PELA QUALIFICAÇÃO, NÃO PELA ETAPA DO FUNIL</strong>
-      <p>A Jornada no CRM só avança de Pré-Atendimento pra Negociação depois de 4 etapas cumpridas na automação — mas na prática, muitos leads mandam a receita já no início da conversa e ficam "presos" no Pré-Atendimento mesmo sendo qualificados de verdade. Por isso, o comparativo abaixo usa o Raio-X (leitura manual das conversas) em vez da etapa do CRM: é o retrato mais honesto de quem realmente qualificou.</p>
-    </div>
-
-    <div class="compare-grid rv d3">
-      <div class="compare-col mes1">
-        <div class="compare-title">Junho</div>
-        <div class="compare-period">116 leads · R$448,98 investidos</div>
-        <div class="compare-row"><span class="compare-row-label">Enviaram receita</span><span class="compare-row-val">1 (1%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Pediram orçamento</span><span class="compare-row-val">1 (1%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Receita + orçamento (quente)</span><span class="compare-row-val">13 (11%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Total c/ receita</span><span class="compare-row-val">14 (12%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Total c/ orçamento</span><span class="compare-row-val">14 (12%)</span></div>
-        <div class="compare-row" style="border-top:1px solid rgba(255,255,255,.15);margin-top:8px;padding-top:12px"><span class="compare-row-label" style="color:var(--ouro);font-weight:700">Total qualificados</span><span class="compare-row-val" style="color:var(--ouro)">15 (13%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Custo por lead pago</span><span class="compare-row-val">R$9,35</span></div>
-      </div>
-      <div class="arrow-mid">
-        <span class="arrow-icon">➜</span>
-        <span class="arrow-label">EVOLUÇÃO</span>
+    <div class="rv"><h2>Painel Geral</h2><p class="slide-sub">31/08 a 13/09/2026 — comparativo entre as duas semanas</p><div class="divider"></div></div>
+    <div class="compare-grid rv d1" style="grid-template-columns:1fr 1fr;gap:32px">
+      <div class="compare-col">
+        <div class="compare-title">Semana 1</div>
+        <div class="compare-period">31/08 a 06/09 · R$223,96 investidos</div>
+        <div class="compare-row"><span class="compare-row-label">Leads registrados</span><span class="compare-row-val">19</span></div>
+        <div class="compare-row"><span class="compare-row-label">Responderam</span><span class="compare-row-val">17 (89%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Com receita</span><span class="compare-row-val">11</span></div>
+        <div class="compare-row"><span class="compare-row-label">Avançaram no funil</span><span class="compare-row-val">4</span></div>
+        <div class="compare-row"><span class="compare-row-label">Conversas iniciadas (Meta)</span><span class="compare-row-val">15 (R$14,93/conversa)</span></div>
       </div>
       <div class="compare-col mes2">
-        <div class="compare-title">Julho</div>
-        <div class="compare-period">113 leads · R$1.083,29 investidos</div>
-        <div class="compare-row"><span class="compare-row-label">Enviaram receita</span><span class="compare-row-val">7 (6%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Pediram orçamento</span><span class="compare-row-val">8 (7%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Receita + orçamento (quente)</span><span class="compare-row-val">43 (38%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Total c/ receita</span><span class="compare-row-val">50 (44%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Total c/ orçamento</span><span class="compare-row-val">51 (45%)</span></div>
-        <div class="compare-row" style="border-top:1px solid rgba(255,255,255,.15);margin-top:8px;padding-top:12px"><span class="compare-row-label" style="color:var(--ouro);font-weight:700">Total qualificados</span><span class="compare-row-val" style="color:var(--ouro)">58 (51%)</span></div>
-        <div class="compare-row"><span class="compare-row-label">Custo por lead pago</span><span class="compare-row-val">R$11,65</span></div>
+        <div class="compare-title">Semana 2</div>
+        <div class="compare-period">07 a 13/09 · R$202,02 investidos</div>
+        <div class="compare-row"><span class="compare-row-label">Leads registrados</span><span class="compare-row-val">7</span></div>
+        <div class="compare-row"><span class="compare-row-label">Responderam</span><span class="compare-row-val">7 (100%)</span></div>
+        <div class="compare-row"><span class="compare-row-label">Com receita</span><span class="compare-row-val">3</span></div>
+        <div class="compare-row"><span class="compare-row-label">Avançaram no funil</span><span class="compare-row-val">1</span></div>
+        <div class="compare-row"><span class="compare-row-label">Conversas iniciadas (Meta)</span><span class="compare-row-val">12 (R$16,84/conversa)</span></div>
       </div>
     </div>
-
-    <div class="diag-box rv d4" style="margin-top:16px">
-      <strong>NOTA SOBRE O CUSTO POR LEAD</strong>
-      <p>O custo por lead foi de R$9,35 em junho para R$11,65 em julho, mas o resultado em leads qualificados foi bem maior.</p>
+    <div class="diag-box rv d5" style="margin-top:20px">
+      <strong>DIAGNÓSTICO DA QUINZENA:</strong>
+      <p>Taxa de resposta muito forte nas duas semanas (89% e 100%). 14 leads já têm receita em mãos no total. Investimento e custo por conversa seguem próximos entre as semanas, sem variação brusca.</p>
     </div>
+    <table class="meta-table rv d6" style="margin-top:20px">
+      <tr><th>Quem mandou receita</th><th>Semana</th><th>Situação</th><th>Observação</th></tr>
+      <tr><td>Rosiane</td><td>1</td><td>Recebeu orçamento, parou</td><td>R$699 (Zeiss intermediário), respondeu só "Ok"</td></tr>
+      <tr><td>Beatriz</td><td>1</td><td>Recebeu explicação, parou</td><td>Explicação detalhada de lente multifocal, convidada pra loja</td></tr>
+      <tr><td>João Raphael</td><td>1</td><td>Recebeu orçamento, parou</td><td>R$220 (antirreflexo+blue)</td></tr>
+      <tr><td>Ademir</td><td>2</td><td>Recebeu orçamento, parou</td><td>R$557 (multifocal fotossensível), só respondeu "Tendi"</td></tr>
+      <tr><td>Nice Cardoso</td><td>1</td><td>Sinalizou visita</td><td>Pediu endereço, confirmou receita, disse "vou passar aí"</td></tr>
+      <tr><td>Jean Carlo</td><td>1</td><td>Sinalizou visita</td><td>Recebeu orçamento (R$300-699), confirmou "irei pessoalmente"</td></tr>
+      <tr><td>Sandra</td><td>1</td><td>Sinalizou visita</td><td>Já em Negociação, disse 2x "vou dar uma passada aí"</td></tr>
+      <tr><td>VA Design</td><td>2</td><td>Já avançou pra Negociação</td><td>Disse explicitamente "vou ver outros orçamentos"</td></tr>
+      <tr><td>Odézia Carrascoza</td><td>2</td><td>Já avançou pra Negociação</td><td>Confirmou exame quinta-feira, vendedora aguarda dados pra fechar</td></tr>
+      <tr><td style="color:var(--ouro);font-weight:700">Francisca Maria Soares</td><td>2</td><td style="color:var(--ouro);font-weight:700">Urgente — decidida, sumiu desde sexta, viaja dia 16</td><td style="color:var(--ouro)">R$850, prazo de entrega (7-10 dias úteis) já não cabe mais antes da viagem — precisa de solução alternativa</td></tr>
+      <tr><td>Alfredo</td><td>1</td><td>Sinal fraco</td><td>Só confirmou que tem receita, nunca mandou foto</td></tr>
+      <tr><td>Marta Rapuci</td><td>2</td><td>Sinal fraco/médio</td><td>Ainda escolhendo armação, sem preço passado</td></tr>
+    </table>
+  </div>
+</section>
 
-    <div class="diag-box rv d4" style="margin-top:28px;border-left-color:var(--verde)">
-      <strong style="color:var(--verde)">LEITURA</strong>
-      <p>A taxa geral de qualificação (recebeu receita, pediu orçamento de lente/óculos, ou os dois) passou de 13% em junho pra 51% em julho — mais da metade dos leads de julho mostrou algum sinal real de intenção de compra de produto (orçamento de exame não conta, só de lente/óculos). Receita total (isolada + junto com orçamento) saltou de 12% pra 44%, orçamento de produto de 12% pra 45%. Os dois indicadores subiram junto, o que mostra que julho não trouxe só mais gente "cotando preço": trouxe gente com receita em mãos, mais perto do fechamento.</p>
-    </div>
+<section class="slide" id="slide-3" data-slide="3">
+  <div class="slide-inner">
+    <div class="rv"><span class="tag">① Quente da Quinzena</span><h2>Pré-Atendimento Qualificado</h2><p class="slide-sub">4 leads que já têm receita e orçamento/explicação discutida, mas a conversa parou</p><div class="divider"></div></div>
+    <div class="lead-list">
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Rosiane  ·  12 dias aguardando</p><a href="https://wa.me/554491035555?text=Oi%20Rosiane%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20j%C3%A1%20fechou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20outra%20cota%C3%A7%C3%A3o%20%28a%20lente%20ficou%20R%24699%20aqui%29%2C%20me%20manda%20o%20valor%20que%20voc%C3%AA%20conseguiu%20que%20eu%20vejo%20se%20consigo%20cobrir." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491035555</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Rosiane! Aqui é da Ótica Herval Select.
 
-    <div class="diag-box rv d4" style="margin-top:16px;border-left-color:var(--verde)">
-      <strong style="color:var(--verde)">OPORTUNIDADE: FECHAR O CICLO DA VENDA NO CRM</strong>
-      <p>Em toda a história do CRM, nenhum lead foi marcado como "Venda" — mesmo em casos confirmados por escrito na conversa. Isso significa que hoje não dá pra medir a taxa de conversão real do funil, nem cruzar qual campanha realmente gerou venda. A recomendação é simples: pelo menos nome e número de WhatsApp de quem comprou (presencial ou pelo CRM) sejam informados e registrados. Com esse dado básico já dá pra fechar o ciclo e enxergar o retorno real do investimento em tráfego.</p>
+Você já fechou os óculos em algum outro lugar?
+
+Se ainda não, e se já tiver outra cotação (a lente ficou R$699 aqui), me manda o valor que você conseguiu que eu vejo se consigo cobrir.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Beatriz  ·  11 dias aguardando</p><a href="https://wa.me/554491432172?text=Oi%20Beatriz%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20j%C3%A1%20fechou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20algum%20or%C3%A7amento%20na%20m%C3%A3o%2C%20me%20manda%20o%20valor%20que%20eu%20vejo%20se%20consigo%20uma%20condi%C3%A7%C3%A3o%20melhor%20pra%20voc%C3%AA." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491432172</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Beatriz! Aqui é da Ótica Herval Select.
+
+Você já fechou os óculos em algum outro lugar?
+
+Se ainda não, e se já tiver algum orçamento na mão, me manda o valor que eu vejo se consigo uma condição melhor pra você.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">João Raphael  ·  9 dias aguardando</p><a href="https://wa.me/554498327672?text=Oi%20Jo%C3%A3o%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20j%C3%A1%20fechou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20outra%20cota%C3%A7%C3%A3o%20%28a%20lente%20ficou%20R%24220%20aqui%29%2C%20me%20manda%20o%20valor%20que%20voc%C3%AA%20conseguiu%20que%20eu%20vejo%20se%20consigo%20cobrir." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554498327672</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi João! Aqui é da Ótica Herval Select.
+
+Você já fechou os óculos em algum outro lugar?
+
+Se ainda não, e se já tiver outra cotação (a lente ficou R$220 aqui), me manda o valor que você conseguiu que eu vejo se consigo cobrir.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--verde)"><div><p class="lead-name">Ademir  ·  2 dias aguardando</p><a href="https://wa.me/5519981207967?text=Oi%20Ademir%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20j%C3%A1%20fechou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20outra%20cota%C3%A7%C3%A3o%20%28a%20lente%20ficou%20R%24557%20aqui%29%2C%20me%20manda%20o%20valor%20que%20voc%C3%AA%20conseguiu%20que%20eu%20vejo%20se%20consigo%20cobrir." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  5519981207967</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Ademir! Aqui é da Ótica Herval Select.
+
+Você já fechou os óculos em algum outro lugar?
+
+Se ainda não, e se já tiver outra cotação (a lente ficou R$557 aqui), me manda o valor que você conseguiu que eu vejo se consigo cobrir.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="slide" id="slide-4" data-slide="4">
+<section class="slide bg-petroleo" id="slide-4" data-slide="4">
   <div class="slide-inner">
-    <span class="tag rv">Raio-X de Qualificação</span>
-    <h2 class="rv d1">O que as 113 conversas de julho mostram</h2>
-    <div class="divider rv d1"></div>
-    <p class="slide-sub rv d2" style="font-size:22px;margin-bottom:8px">Leitura manual de cada conversa — não pelo campo do sistema, pelo que o lead realmente disse.</p>
-    <table class="meta-table rv d2">
-      <tr><th>Categoria</th><th>Leads</th><th>%</th></tr>
-      <tr><td>Entraram em contato e não responderam</td><td class="num">32</td><td>28%</td></tr>
-      <tr><td>Enviaram receita</td><td class="num">7</td><td>6%</td></tr>
-      <tr><td>Pediram orçamento de lente/óculos</td><td class="num">8</td><td>7%</td></tr>
-      <tr><td style="color:var(--ouro);font-weight:700">Receita + orçamento</td><td class="num" style="color:var(--ouro)">43</td><td style="color:var(--ouro);font-weight:700">38%</td></tr>
-      <tr><td>Engajaram sem qualificação real</td><td class="num">21</td><td>19%</td></tr>
-      <tr><td>Confirmaram visita com dia real</td><td class="num">3</td><td>3%</td></tr>
-    </table>
-    <div class="diag-box rv d3">
-      <strong>SUGESTÃO</strong>
-      <p>A vendedora responde bem e dá o preço — o próximo passo natural é devolver a pergunta "qual dia fica bom pra você vir?" pra já direcionar o lead qualificado pra uma visita. Outra alternativa pra quando o cliente esfria depois da cotação: perguntar se ele já tem outro orçamento em mãos e pedir pra não fechar em outra loja antes de mandar a proposta de volta — assim dá pra tentar cobrir o preço antes de perder a venda.</p>
+    <div class="rv"><span class="tag">② Quente da Quinzena</span><h2>Já Sinalizaram Interesse em Vir na Loja</h2><p class="slide-sub">3 leads que pediram endereço ou confirmaram presença — a intenção é já sugerir um dia pra visita</p><div class="divider"></div></div>
+    <div class="lead-list">
+      <div class="lead-card rv d1" style="--lc:var(--azul)"><div><p class="lead-name">Nice Cardoso  ·  12 dias aguardando</p><a href="https://wa.me/554497701369?text=Oi%20Nice%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20tinha%20dito%20que%20ia%20passar%20aqui%20na%20loja.%0A%0AConseguiu%20vir%3F%20Se%20ainda%20n%C3%A3o%2C%20me%20fala%20qual%20dia%20fica%20bom%20que%20j%C3%A1%20deixo%20reservado." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554497701369</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Nice! Aqui é da Ótica Herval Select.
+
+Você tinha dito que ia passar aqui na loja.
+
+Conseguiu vir? Se ainda não, me fala qual dia fica bom que já deixo reservado.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--azul)"><div><p class="lead-name">Jean Carlo  ·  9 dias aguardando</p><a href="https://wa.me/554488386886?text=Oi%20Jean%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20confirmou%20que%20ia%20vir%20pessoalmente%20na%20loja.%0A%0AConseguiu%20vir%3F%20Se%20ainda%20n%C3%A3o%2C%20%C3%A9%20s%C3%B3%20perguntar%20pelo%20Gustavo%20que%20ele%20te%20atende." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554488386886</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Jean! Aqui é da Ótica Herval Select.
+
+Você confirmou que ia vir pessoalmente na loja.
+
+Conseguiu vir? Se ainda não, é só perguntar pelo Gustavo que ele te atende.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--azul)"><div><p class="lead-name">Sandra  ·  11 dias aguardando</p><a href="https://wa.me/554499458683?text=Oi%20Sandra%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVoc%C3%AA%20tinha%20dito%20que%20ia%20dar%20uma%20passada%20aqui%20pra%20gente%20te%20explicar%20melhor%20as%20diferen%C3%A7as%20entre%20as%20lentes.%0A%0AConseguiu%20vir%3F%20Se%20ainda%20n%C3%A3o%2C%20qual%20dia%20fica%20bom%20pra%20voc%C3%AA%3F" target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554499458683</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Sandra! Aqui é da Ótica Herval Select.
+
+Você tinha dito que ia dar uma passada aqui pra gente te explicar melhor as diferenças entre as lentes.
+
+Conseguiu vir? Se ainda não, qual dia fica bom pra você?</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
     </div>
-    <p class="rv d4" style="font-size:18px;color:var(--cinza);margin-top:14px;font-style:italic">A lista completa lead a lead, com WhatsApp clicável e sugestão de retorno para cada um, vai num documento separado para uso da vendedora.</p>
   </div>
 </section>
 
 <section class="slide bg-petroleo" id="slide-5" data-slide="5">
   <div class="slide-inner">
-    <span class="tag rv">Tráfego Pago</span>
-    <h2 class="rv d1">Diagnóstico Meta Ads</h2>
-    <div class="divider rv d1"></div>
-    <div class="kpi-grid rv d2">
-      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="49037">0</span><span class="kpi-label">Impressões</span></div>
-      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="531">0</span><span class="kpi-label">Cliques (CTR 1,08%)</span></div>
-      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="92">0</span><span class="kpi-label">Opportunity Score</span></div>
-      <div class="kpi-card" style="--ka:var(--azul)"><span class="kpi-num" data-target="19432">0</span><span class="kpi-label">Alcance</span></div>
+    <div class="rv"><span class="tag">③ Quente da Quinzena</span><h2>Negociação — Entraram Nesta Quinzena</h2><p class="slide-sub">3 leads que já avançaram pra Negociação nos últimos 14 dias</p><div class="divider"></div></div>
+    <div class="lead-list">
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">VA Design  ·  2 dias aguardando</p><a href="https://wa.me/554497195407?text=Oi%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVi%20que%20voc%C3%AA%20ficou%20de%20ver%20outros%20or%C3%A7amentos%20de%20lente%20Varilux.%0A%0AJ%C3%A1%20fechou%20em%20algum%20outro%20lugar%3F%20Se%20ainda%20n%C3%A3o%2C%20me%20manda%20o%20valor%20que%20voc%C3%AA%20conseguiu%20que%20eu%20vejo%20se%20consigo%20cobrir." target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554497195407</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi! Aqui é da Ótica Herval Select.
+
+Vi que você ficou de ver outros orçamentos de lente Varilux.
+
+Já fechou em algum outro lugar? Se ainda não, me manda o valor que você conseguiu que eu vejo se consigo cobrir.</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Odézia Carrascoza  ·  3 dias aguardando</p><a href="https://wa.me/554491803050?text=Oi%20Od%C3%A9zia%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AFicou%20pendente%20fechar%20o%20agendamento%20do%20seu%20exame%20de%20quinta-feira%20%E2%80%94%20s%C3%B3%20preciso%20do%20seu%20nome%20completo%2C%20CPF%20e%20data%20de%20nascimento.%0A%0AConsegue%20me%20passar%20pra%20eu%20confirmar%20direitinho%3F" target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491803050</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Odézia! Aqui é da Ótica Herval Select.
+
+Ficou pendente fechar o agendamento do seu exame de quinta-feira — só preciso do seu nome completo, CPF e data de nascimento.
+
+Consegue me passar pra eu confirmar direitinho?</div></div><div class="badges"><span class="badge badge-re">RECEITA ✓</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--ouro)"><div><p class="lead-name">🔥 Francisca Maria Soares  ·  URGENTE — sumiu desde sexta, viaja dia 16</p><a href="https://wa.me/554498527411?text=Oi%20Francisca%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVi%20que%20voc%C3%AA%20n%C3%A3o%20respondeu%20desde%20sexta%20%E2%80%94%20o%20prazo%20de%20entrega%20%287%20a%2010%20dias%20%C3%BAteis%29%20j%C3%A1%20n%C3%A3o%20cabe%20mais%20antes%20da%20sua%20viagem%20dia%2016.%0A%0AQuer%20que%20eu%20deixe%20tudo%20preparado%20pra%20retirar%20assim%20que%20voc%C3%AA%20voltar%20da%20viagem%3F%20Ou%20prefere%20que%20eu%20veja%20alguma%20alternativa%20mais%20r%C3%A1pida%20com%20o%20laborat%C3%B3rio%3F" target="_blank" style="font-size:16px;color:var(--verde);font-weight:600;display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554498527411</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Francisca! Aqui é da Ótica Herval Select.
+
+Vi que você não respondeu desde sexta — o prazo de entrega (7 a 10 dias úteis) já não cabe mais antes da sua viagem dia 16.
+
+Quer que eu deixe tudo preparado pra retirar assim que você voltar da viagem? Ou prefere que eu veja alguma alternativa mais rápida com o laboratório?</div></div><div class="badges"><span class="badge badge-ua">DECIDIDA</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="slide" id="slide-6" data-slide="6">
+<section class="slide bg-petroleo" id="slide-6" data-slide="6">
   <div class="slide-inner">
-    <span class="tag rv">Criativos</span>
-    <h2 class="rv d1">Sugestão de Produção</h2>
-    <div class="divider rv d1"></div>
-    <div class="diag-box rv d2">
-      <strong>ANÚNCIO PRINCIPAL PERDENDO FÔLEGO</strong>
-      <p>O anúncio em vídeo "[Composto 399,90 6x sem juros]" consome 79% da verba (R$859,55), mas está numa queda de eficiência. Um dos sinais disso é o aumento de frequência — quando a mesma pessoa vê o anúncio repetidas vezes, é normalmente porque o criativo está desgastando e perdendo força.</p>
-    </div>
-    <div class="diag-box rv d3" style="border-left-color:var(--verde)">
-      <strong style="color:var(--verde)">RECOMENDAÇÃO</strong>
-      <p>Migrar para formato Reels vertical 9:16 com áudio — estimativa do Meta de até 5% menos custo por resposta. Além disso, aumentar o número de variações de criativo (vídeo e estático) em produção, para reduzir a dependência de um único anúncio e testar qual formato performa melhor.</p>
+    <div class="rv"><span class="tag">④ Acumulado</span><h2>Visita Sem Retorno</h2><p class="slide-sub">4 leads de agosto/setembro que confirmaram visita mas não temos registro de retorno</p><div class="divider"></div></div>
+    <div class="lead-list">
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Jane Santana</p><a href="https://wa.me/554499907944" target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">📱 554499907944</a></div><div class="badges"><span class="badge badge-ua">URG: ALTA</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Maria Neiva</p><a href="https://wa.me/554498979673" target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">📱 554498979673</a></div><div class="badges"><span class="badge badge-ua">URG: ALTA</span></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--cinza)"><div><p class="lead-name">Deivid F.</p><a href="https://wa.me/554498414982" target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">📱 554498414982</a></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--azul)"><div><p class="lead-name">Elaine</p><a href="https://wa.me/554497547693" target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">📱 554497547693</a></div><div class="badges"><span class="badge badge-ub">URG: BAIXA</span></div></div>
     </div>
   </div>
 </section>
 
-<section class="slide bg-petroleo azul-accent" id="slide-7" data-slide="7">
+<section class="slide" id="slide-7" data-slide="7">
   <div class="slide-inner">
-    <span class="tag rv">Conversão Real</span>
-    <h2 class="rv d1">Cruzamento Anúncio → Venda</h2>
-    <div class="divider rv d1"></div>
-    <div class="diag-box rv d2" style="border-left-color:var(--vermelho)">
-      <strong style="color:var(--vermelho)">NÃO FOI POSSÍVEL FECHAR ESSE CRUZAMENTO ESTE MÊS</strong>
-      <p>Nenhum lead foi marcado como "Venda" no CRM em julho, e o campo Origem segue quase vazio (6 de 113 preenchidos). Sem esses dois dados, não dá pra dizer com confiança qual anúncio específico gerou venda — só qual gerou lead. São lacunas estruturais da operação, não do relatório.</p>
+    <div class="rv"><span class="tag">⑤ Acumulado</span><h2>Negociação Parada — Semanas Anteriores</h2><p class="slide-sub">9 leads de agosto com orçamento enviado, sem fechamento</p><div class="divider"></div></div>
+    <div class="lead-list">
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Rosangela</p><a href="https://wa.me/554498353079?text=Oi%20Rosangela%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVi%20que%20voc%C3%AA%20tinha%20pedido%20um%20or%C3%A7amento%20com%20a%20gente.%0AVoc%C3%AA%20j%C3%A1%20comprou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%20fechou%2C%20voc%C3%AA%20chegou%20a%20pegar%20outra%20cota%C3%A7%C3%A3o%3F%0ASe%20tiver%2C%20me%20manda%20uma%20foto%20ou%20print%20dela%20antes%20de%20fechar%20%E2%80%94%20vou%20tentar%20cobrir%20o%20pre%C3%A7o%20pra%20voc%C3%AA." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554498353079</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Rosangela! Aqui é da Ótica Herval Select.
+
+Vi que você tinha pedido um orçamento com a gente.
+Você já comprou os óculos em algum outro lugar?
+
+Se ainda não fechou, você chegou a pegar outra cotação?
+Se tiver, me manda uma foto ou print dela antes de fechar — vou tentar cobrir o preço pra você.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">😘😘😘</p><a href="https://wa.me/554491422529?text=Oi%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AFicou%20faltando%20saber%20de%20voc%C3%AA%20%E2%80%94%20j%C3%A1%20resolveu%20a%20quest%C3%A3o%20dos%20%C3%B3culos%20em%20outro%20lugar%3F%0A%0ACaso%20ainda%20n%C3%A3o%2C%20e%20se%20voc%C3%AA%20j%C3%A1%20tiver%20outra%20cota%C3%A7%C3%A3o%20na%20m%C3%A3o%2C%20me%20manda%20o%20print%20dela.%0AVou%20ver%20o%20que%20consigo%20fazer%20pra%20te%20dar%20uma%20condi%C3%A7%C3%A3o%20melhor%20antes%20de%20voc%C3%AA%20fechar." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491422529</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi, tudo bem? Aqui é da Ótica Herval Select.
+
+Ficou faltando saber de você — já resolveu a questão dos óculos em outro lugar?
+
+Caso ainda não, e se você já tiver outra cotação na mão, me manda o print dela.
+Vou ver o que consigo fazer pra te dar uma condição melhor antes de você fechar.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Paulo Marçal</p><a href="https://wa.me/554491852772?text=Oi%20Paulo%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0APassando%20aqui%20pra%20saber%20se%20voc%C3%AA%20j%C3%A1%20providenciou%20os%20%C3%B3culos%20por%20outra%20%C3%B3tica.%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20cotado%20em%20algum%20outro%20lugar%2C%20me%20manda%20o%20print%20ou%20foto%20da%20cota%C3%A7%C3%A3o.%0AVou%20tentar%20te%20dar%20uma%20condi%C3%A7%C3%A3o%20melhor%20antes%20de%20voc%C3%AA%20decidir." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491852772</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Paulo! Aqui é da Ótica Herval Select.
+
+Passando aqui pra saber se você já providenciou os óculos por outra ótica.
+
+Se ainda não, e se já tiver cotado em algum outro lugar, me manda o print ou foto da cotação.
+Vou tentar te dar uma condição melhor antes de você decidir.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Nathalia</p><a href="https://wa.me/5521995422345?text=Oi%20Nathalia%2C%20tudo%20certo%3F%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AQueria%20confirmar%3A%20voc%C3%AA%20chegou%20a%20fechar%20os%20%C3%B3culos%20em%20outra%20loja%3F%0A%0ASe%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20algum%20or%C3%A7amento%20em%20m%C3%A3os%2C%20me%20manda%20a%20foto%20ou%20o%20print%20dele%20antes%20de%20fechar%20%E2%80%94%20vou%20tentar%20bater%20esse%20pre%C3%A7o." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  5521995422345</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Nathalia, tudo certo? Aqui é da Ótica Herval Select.
+
+Queria confirmar: você chegou a fechar os óculos em outra loja?
+
+Se não, e se já tiver algum orçamento em mãos, me manda a foto ou o print dele antes de fechar — vou tentar bater esse preço.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Anderson F. Nunes</p><a href="https://wa.me/554491544602?text=Oi%20Anderson%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AS%C3%B3%20pra%20confirmar%3A%20voc%C3%AA%20j%C3%A1%20comprou%20seus%20%C3%B3culos%20em%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%20fechou%20nada%20e%20tiver%20cota%C3%A7%C3%A3o%20de%20outra%20%C3%B3tica%2C%20me%20manda%20o%20print%20dela%20antes.%0AVou%20tentar%20conseguir%20um%20pre%C3%A7o%20melhor%20pra%20voc%C3%AA." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554491544602</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Anderson! Aqui é da Ótica Herval Select.
+
+Só pra confirmar: você já comprou seus óculos em outro lugar?
+
+Se ainda não fechou nada e tiver cotação de outra ótica, me manda o print dela antes.
+Vou tentar conseguir um preço melhor pra você.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Regi Mucio</p><a href="https://wa.me/554498548002?text=Oi%20Regi%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AVi%20que%20voc%C3%AA%20tinha%20pedido%20um%20or%C3%A7amento%20com%20a%20gente.%0AVoc%C3%AA%20j%C3%A1%20comprou%20os%20%C3%B3culos%20em%20algum%20outro%20lugar%3F%0A%0ASe%20ainda%20n%C3%A3o%20fechou%2C%20voc%C3%AA%20chegou%20a%20pegar%20outra%20cota%C3%A7%C3%A3o%3F%0ASe%20tiver%2C%20me%20manda%20uma%20foto%20ou%20print%20dela%20antes%20de%20fechar%20%E2%80%94%20vou%20tentar%20cobrir%20o%20pre%C3%A7o%20pra%20voc%C3%AA." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554498548002</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Regi! Aqui é da Ótica Herval Select.
+
+Vi que você tinha pedido um orçamento com a gente.
+Você já comprou os óculos em algum outro lugar?
+
+Se ainda não fechou, você chegou a pegar outra cotação?
+Se tiver, me manda uma foto ou print dela antes de fechar — vou tentar cobrir o preço pra você.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Edna Leao</p><a href="https://wa.me/554499505779?text=Oi%20Edna%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AFicou%20faltando%20saber%20de%20voc%C3%AA%20%E2%80%94%20j%C3%A1%20resolveu%20a%20quest%C3%A3o%20dos%20%C3%B3culos%20em%20outro%20lugar%3F%0A%0ACaso%20ainda%20n%C3%A3o%2C%20e%20se%20voc%C3%AA%20j%C3%A1%20tiver%20outra%20cota%C3%A7%C3%A3o%20na%20m%C3%A3o%2C%20me%20manda%20o%20print%20dela.%0AVou%20ver%20o%20que%20consigo%20fazer%20pra%20te%20dar%20uma%20condi%C3%A7%C3%A3o%20melhor%20antes%20de%20voc%C3%AA%20fechar." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554499505779</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Edna, tudo bem? Aqui é da Ótica Herval Select.
+
+Ficou faltando saber de você — já resolveu a questão dos óculos em outro lugar?
+
+Caso ainda não, e se você já tiver outra cotação na mão, me manda o print dela.
+Vou ver o que consigo fazer pra te dar uma condição melhor antes de você fechar.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Larissa Dena</p><a href="https://wa.me/554497429888?text=Oi%20Larissa%21%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0APassando%20aqui%20pra%20saber%20se%20voc%C3%AA%20j%C3%A1%20providenciou%20os%20%C3%B3culos%20por%20outra%20%C3%B3tica.%0A%0ASe%20ainda%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20cotado%20em%20algum%20outro%20lugar%2C%20me%20manda%20o%20print%20ou%20foto%20da%20cota%C3%A7%C3%A3o.%0AVou%20tentar%20te%20dar%20uma%20condi%C3%A7%C3%A3o%20melhor%20antes%20de%20voc%C3%AA%20decidir." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  554497429888</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Larissa! Aqui é da Ótica Herval Select.
+
+Passando aqui pra saber se você já providenciou os óculos por outra ótica.
+
+Se ainda não, e se já tiver cotado em algum outro lugar, me manda o print ou foto da cotação.
+Vou tentar te dar uma condição melhor antes de você decidir.</div></div><div class="badges"></div></div>
+      <div class="lead-card rv d1" style="--lc:var(--laranja)"><div><p class="lead-name">Maria Eduarda</p><a href="https://wa.me/5519993462618?text=Oi%20Maria%2C%20tudo%20certo%3F%20Aqui%20%C3%A9%20da%20%C3%93tica%20Herval%20Select.%0A%0AQueria%20confirmar%3A%20voc%C3%AA%20chegou%20a%20fechar%20os%20%C3%B3culos%20em%20outra%20loja%3F%0A%0ASe%20n%C3%A3o%2C%20e%20se%20j%C3%A1%20tiver%20algum%20or%C3%A7amento%20em%20m%C3%A3os%2C%20me%20manda%20a%20foto%20ou%20o%20print%20dele%20antes%20de%20fechar%20%E2%80%94%20vou%20tentar%20bater%20esse%20pre%C3%A7o." target="_blank" style="font-size:16px;color:var(--verde);display:block;margin:3px 0;text-decoration:none;">💬 Mandar mensagem  ·  5519993462618</a><div class="lead-sit" style="margin-top:8px;font-size:16px;color:#c9d6da;background:rgba(255,255,255,.04);border-left:2px solid var(--verde);padding:8px 10px;border-radius:4px;white-space:pre-line;max-width:480px;">Oi Maria, tudo certo? Aqui é da Ótica Herval Select.
+
+Queria confirmar: você chegou a fechar os óculos em outra loja?
+
+Se não, e se já tiver algum orçamento em mãos, me manda a foto ou o print dele antes de fechar — vou tentar bater esse preço.</div></div><div class="badges"></div></div>
     </div>
-    <div class="diag-box rv d3" style="border-left-color:var(--verde)">
-      <strong style="color:var(--verde)">RECOMENDAÇÃO</strong>
-      <p>Pedir para a loja informar nome e número de WhatsApp de quem comprou presencialmente (mesmo sem ter vindo pelo CRM), pra dar pra cruzar essas vendas com os leads e enxergar quais campanhas realmente geraram conversão — não só lead.</p>
-    </div>
+    <p class="slide-sub" style="margin-top:16px;font-size:16px;font-style:italic">Nota: Regina Marques (Representante Seara), Diego Matheus e Leonardo (contato de laboratório de lentes) parecem contato comercial/fornecedor, não lead de cliente — excluídos da lista.</p>
   </div>
 </section>
 
-<section class="slide bg-petroleo" id="slide-8" data-slide="8">
+<section class="slide bg-petroleo azul-accent" id="slide-8" data-slide="8">
   <div class="slide-inner">
-    <span class="tag rv">Para a Vendedora Conferir</span>
-    <h2 class="rv d1">Confirmar Visita ou Compra — Dia Marcado</h2>
-    <div class="divider rv d1"></div>
-
-    <table class="meta-table rv d2">
-      <tr><th>Lead</th><th>Dia combinado</th></tr>
-      <tr><td style="color:var(--ouro);font-weight:700">Maura Marciliano Lemos</td><td>Terça-feira 11h</td></tr>
-      <tr><td style="color:var(--ouro);font-weight:700">Regina</td><td>Sábado de manhã</td></tr>
-      <tr><td style="color:var(--ouro);font-weight:700">Pri Maciel</td><td>Até segunda-feira</td></tr>
-    </table>
-
-    <div class="diag-box rv d3" style="margin-top:24px;border-left-color:var(--verde)">
-      <strong style="color:var(--verde)">RECOMENDAÇÃO</strong>
-      <p>Conferir se essas 3 pessoas vieram na loja ou já compraram no dia combinado. Se não vieram, mandar mensagem de reativação — elas já estão listadas com link de WhatsApp pronto na página de leads, pra facilitar o contato.</p>
-    </div>
-  </div>
-</section>
-
-<section class="slide" id="slide-9" data-slide="9">
-  <div class="slide-inner">
-    <span class="tag rv">Próximos Passos</span>
-    <h2 class="rv d1">Pendências de Julho</h2>
-    <div class="divider rv d1"></div>
+    <div class="rv"><h2>Próximos Passos</h2><div class="divider"></div></div>
     <div class="steps">
       <div class="step-card rl d1">
         <span class="step-num">01</span>
-        <div><div class="step-title">Testar mais variações de criativo</div><p class="step-desc">Vídeo e estático, incluindo formato Reels vertical 9:16 com áudio, pra reduzir a dependência de um único anúncio, baixar o custo e aumentar a otimização.</p></div>
+        <div><div class="step-title">Contatar a Francisca Maria Soares — urgente, mas prazo mudou</div><p class="step-desc">Sumiu desde sexta. Decidida a comprar, mas viaja dia 16/09 e o prazo de entrega (7-10 dias úteis) já não cabe mais — precisa alinhar uma solução alternativa (retirar na volta, ou verificar prazo expresso com o laboratório).</p></div>
       </div>
       <div class="step-card rl d2">
         <span class="step-num">02</span>
-        <div><div class="step-title">Reativar os 55 leads qualificados</div><p class="step-desc">Lista com WhatsApp clicável e mensagem por lead (ordenada por prioridade: receita+orçamento, depois só receita, depois só orçamento de lente/óculos — orçamento de exame não conta como qualificação), entregue separadamente para a vendedora. Os 3 com visita já marcada ficam numa lista à parte, só de confirmação.</p></div>
+        <div><div class="step-title">Trabalhar a fila de Negociação Parada</div><p class="step-desc">9 pessoas de agosto com orçamento já enviado. Leads mais antigos (julho e antes) ficam de fora do relatório — serão tratados num levantamento específico no mensal.</p></div>
       </div>
       <div class="step-card rl d3">
         <span class="step-num">03</span>
-        <div><div class="step-title">Solicitar dados de quem comprou presencialmente</div><p class="step-desc">Nome e WhatsApp de quem converteu na loja, pra cruzar com os leads e enxergar quais campanhas realmente geram venda, não só lead.</p></div>
+        <div><div class="step-title">Confirmar as 4 visitas sem retorno</div><p class="step-desc">Descobrir se vieram, compraram, ou sumiram — pra decidir se reativa ou marca como perdida.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>@brunopro.tech  ·  Ótica Herval Select  ·  Relatório Julho 2026</p>
+  <p>@brunopro.tech  ·  Ótica Herval Select  ·  Relatório Semanal 03-09/08/2026</p>
   <p>Gestão de Automação com IA  ·  v2.0</p>
 </footer>
 <script>
@@ -466,6 +483,7 @@ const dotsC=document.getElementById('nav-dots');
 slides.forEach((_,i)=>{const d=document.createElement('div');d.className='nav-dot'+(i===0?' active':'');d.addEventListener('click',()=>document.getElementById('slide-'+(i+1)).scrollIntoView({behavior:'smooth'}));dotsC.appendChild(d);});
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.rv,.rl,.rr,.rs').forEach(el=>el.classList.add('vis'));const idx=parseInt(e.target.dataset.slide)-1;document.querySelectorAll('.nav-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));e.target.querySelectorAll('[data-target]').forEach(el=>{if(el.dataset.counted)return;el.dataset.counted=1;const t=parseInt(el.dataset.target);let c=0;const s=Math.max(1,Math.ceil(t/50));const ti=setInterval(()=>{c=Math.min(c+s,t);el.textContent=c;if(c>=t)clearInterval(ti);},28);});}});},{threshold:.12});
 slides.forEach(s=>obs.observe(s));
+document.querySelectorAll('.rv,.rl,.rr,.rs').forEach(el=>el.classList.add('vis'));
 const h1=document.querySelector('h1');
 if(h1){h1.addEventListener('mouseenter',()=>{h1.style.animation='gh .4s steps(2) 2';});h1.addEventListener('animationend',()=>{h1.style.animation='';});}
 const st=document.createElement('style');
